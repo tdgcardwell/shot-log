@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shot Log</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <h1>Shot Log</h1>
+
+    <form id="infoGatherer">
+      <div class="input">
+        <div class="">
+          <label for="scene">Scene</label>
+          <input type="text" name="scene" value="" id="scene" placeholder="1">
+        </div>
+
+        <div class="">
+          <label for="shot">Shot</label>
+          <input type="text" name="shot" value="" id="shot" placeholder="blank first, then A, B...">
+        </div>
+
+        <div class="">
+          <label for="take">Take</label>
+          <input type="text" name="take" value="1" id="take">
+        </div>
+
+        <div class="">
+          <label for="lens">Lens</label>
+          <input type="text" name="Lens" value="" id="lens" placeholder="17mm">
+        </div>
+
+        <div class="">
+          <label for="ISO">ISO</label>
+          <select id='ISO' name="ISO" value="">
+            <option value="LOW">Low</option>
+            <option value="200">200</option>
+            <option value="400">400</option>
+            <option value="800" selected>800</option>
+            <option value="1600">1600</option>
+            <option value="3200">3200</option>
+            <option value="6400">6400</option>
+            <option value="12800">12800</option>
+            <option value="25600">25600</option>
+          </select>
+        </div>
+
+        <div class="">
+          <label for="Fstop">Fstop</label>
+          <select name="Fstop" value="" id="Fstop">
+            <option value="ƒ1">ƒ1</option>
+            <option value="ƒ1.1">ƒ1.1</option>
+            <option value="ƒ1.2">ƒ1.2</option>
+            <option value="ƒ1.4">ƒ1.4</option>
+            <option value="ƒ1.6">ƒ1.6</option>
+            <option value="ƒ1.8" selected>ƒ1.8</option>
+            <option value="ƒ2">ƒ2</option>
+            <option value="ƒ2.2">ƒ2.2</option>
+            <option value="ƒ2.5">ƒ2.5</option>
+            <option value="ƒ2.8">ƒ2.8</option>
+            <option value="ƒ3.2">ƒ3.2</option>
+            <option value="ƒ3.5">ƒ3.5</option>
+            <option value="ƒ4">ƒ4</option>
+            <option value="ƒ4.5">ƒ4.5</option>
+            <option value="ƒ5">ƒ5</option>
+            <option value="ƒ5.6">ƒ5.6</option>
+            <option value="ƒ6.3">ƒ6.3</option>
+            <option value="ƒ7.1">ƒ7.1</option>
+            <option value="ƒ8">ƒ8</option>
+            <option value="ƒ9">ƒ9</option>
+          </select>
+        </div>
+
+        <div class="notes">
+          <label for="notes">Notes</label>
+          <textarea name="notes" rows="10" cols="20" id="notes"></textarea>
+        </div>
+
+        <div class="circle">
+          <label for="circle">Circle the Take?</label>
+          <input type="checkbox" name="circle" id="circle">
+        </div>
+
+        <button class="addShot">Log it!</button>
+
+      </div>
+    </form>
+
+    <div class="the-log shot-log">
+      <div class="shot-row titles">
+        <div class="">
+          Scene
+        </div>
+        <div class="">
+          Shot
+        </div>
+        <div class="">
+          Take
+        </div>
+        <div class="">
+          Lens
+        </div>
+        <div class="">
+          ISO
+        </div>
+        <div class="">
+          Fstop
+        </div>
+        <div class="">
+          Notes
+        </div>
+      </div>
+
+    </div>
+
+    <script src="app.js" charset="utf-8"></script>
+
+  </body>
+</html>

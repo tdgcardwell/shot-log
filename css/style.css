@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin-top: 1rem;
+}
+
+h1 {
+  text-align: center;
+  margin: 3rem auto 2rem;
+  font-family: 'Rock Salt';
+}
+
+.input {
+  display: grid;
+  gap: .5rem;
+  margin: 1rem;
+  grid-template-rows: 3em;
+  grid-auto-rows: minmax(3em, auto);
+
+}
+
+.input,
+.the-log {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 2rem;
+}
+
+.info {
+  /* display: flex; */
+}
+
+label,
+textarea {
+  display: inline-block;
+}
+
+label {
+  margin-top: .5rem;
+}
+
+input,
+textarea,
+select {
+  padding: .5rem;
+}
+
+input,
+select {
+  width:100%;
+}
+
+.notes,
+.circle {
+  display:flex;
+  flex-direction: column;
+}
+
+.circle {
+  align-items: center;
+}
+
+#circle {
+  width: 4rem;
+  height:4rem;
+  margin-top: .5rem;
+}
+
+button {
+  width: 90%;
+  height: 4rem;
+  margin: 2rem auto;
+}
+
+/* --------------------- */
+
+.the-log {
+  border-bottom: 0;
+}
+
+.good-take {
+  border-radius: 50%;
+  border: 2px solid red;
+}
+
+.shot-row {
+  display: grid;
+  gap: 0;
+  border-bottom: 1px dotted gray;
+  grid-template-columns: 1fr 1fr 3.5rem 1fr 1fr 1fr 3fr;
+  margin: 0 20px;
+}
+
+.titles {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.shot-row:nth-child(2n) {
+  background-color: #eef;
+}
+
+.shot-row div {
+  height: 3.5rem;
+  overflow: auto;
+  text-align: center;
+  /* flex-grow: 1; */
+  padding: 1rem .5rem;
+}
+
+.shot-row div:nth-child(3n){
+  /* flex-grow: 0; */
+  /* width: 3rem; */
+}
+
+.shot-row div:last-child {
+  /* flex-grow: 2; */
+}
+
+@media screen and (min-width:768px) {
+  /* change the grid around */
+  .input {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .notes {
+    grid-column-end: span 3;
+  }
+
+  .circle {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #circle {
+    margin-left: 2rem;
+    margin-right: auto;
+    margin-top: 0;
+  }
+
+  button {
+    grid-column-end: span 2;
+    margin:0 0 0 auto;
+    width:calc(50% - 1rem);
+  }
+
+}
+
+@media print {
+  .input {
+    display: none !important;
+  }
+}
