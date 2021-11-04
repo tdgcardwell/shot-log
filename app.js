@@ -21,8 +21,6 @@ const date = new Date();
 const year = date.getFullYear();
 const month = date.getMonth();
 const day = date.getDate();
-const hours = date.getHours();
-const minutes = date.getMinutes();
 
 // focus scene input on page load
 scene.focus();
@@ -40,6 +38,10 @@ function reset(field) {
 //log a scene
 logIt.addEventListener('submit', (e)=> {
   e.preventDefault();
+
+  const time = new Date();
+  const hours = time.getHours();
+  const minutes = time.getMinutes();
 
   let takeInfo =
                   ` <div class="">${scene.value}</div>
@@ -80,11 +82,6 @@ logIt.addEventListener('submit', (e)=> {
 
   //focus shot input
   shot.focus();
-
-
-
-  //testing date
-  console.log(`${month}/${day}/${year} - ${hours}/${minutes}`);
 
 });
 
