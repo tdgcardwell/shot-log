@@ -17,8 +17,19 @@ let fStop = document.querySelector('#Fstop');
 let notes = document.querySelector('#notes');
 let circle = document.querySelector('#circle');
 
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth();
+const day = date.getDate();
+const hours = date.getHours();
+const minutes = date.getMinutes();
+
 // focus scene input on page load
 scene.focus();
+
+//add date to header
+let heading = document.querySelector('h1');
+heading.textContent = `${heading.textContent} - ${month}/${day}/${year}`;
 
 //reset function
 function reset(field) {
@@ -37,7 +48,8 @@ logIt.addEventListener('submit', (e)=> {
                     <div class="">${lens.value}</div>
                     <div class="">${iso.value}</div>
                     <div class="">${fStop.value}</div>
-                    <div class="">${notes.value}</div>`;
+                    <div class="">${notes.value}</div>
+                    <div class="">${hours}:${minutes}</div>`;
 
 
   //prob better way to do this
@@ -68,6 +80,11 @@ logIt.addEventListener('submit', (e)=> {
 
   //focus shot input
   shot.focus();
+
+
+
+  //testing date
+  console.log(`${month}/${day}/${year} - ${hours}/${minutes}`);
 
 });
 

@@ -1,24 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Numans&family=Special+Elite&display=swap');
 
 * {
   box-sizing:border-box;
 }
 
 body {
-  margin-top: 1rem;
+ font-family: 'Numans', sans-serif;
+}
+
+header{
+  width:90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: yellow;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 h1 {
   text-align: center;
-  margin: 3rem auto 2rem;
-  font-family: 'Rock Salt';
+  margin: 0 auto 1rem;
+  position: relative;
+  top: -2rem;
+  font-family: 'Special Elite', cursive;
 }
 
 .input {
   display: grid;
   gap: .5rem;
   margin: 1rem;
-  grid-template-rows: 3em;
+  grid-template-rows: minmax(3em, auto);
   grid-auto-rows: minmax(3em, auto);
 
 }
@@ -26,7 +38,6 @@ h1 {
 .input,
 .the-log {
   padding-bottom: 2rem;
-  border-bottom: 2px solid #ccc;
   margin-bottom: 2rem;
 }
 
@@ -65,8 +76,8 @@ select {
 }
 
 #circle {
-  width: 4rem;
-  height:4rem;
+  width: 4.5rem;
+  height:4.5rem;
   margin-top: .5rem;
 }
 
@@ -78,10 +89,6 @@ button {
 
 /* --------------------- */
 
-.the-log {
-  border-bottom: 0;
-}
-
 .good-take {
   border-radius: 50%;
   border: 2px solid red;
@@ -91,7 +98,7 @@ button {
   display: grid;
   gap: 0;
   border-bottom: 1px dotted gray;
-  grid-template-columns: 1fr 1fr 3.5rem 1fr 1fr 1fr 3fr;
+  grid-template-columns: 1fr 1fr 4rem 1fr 1fr 1fr 3fr 1fr;
   margin: 0 20px;
 }
 
@@ -105,16 +112,10 @@ button {
 }
 
 .shot-row div {
-  height: 3.5rem;
+  height: 4rem;
   overflow: auto;
   text-align: center;
-  /* flex-grow: 1; */
   padding: 1rem .5rem;
-}
-
-.shot-row div:nth-child(3n){
-  /* flex-grow: 0; */
-  /* width: 3rem; */
 }
 
 .shot-row div:last-child {
@@ -155,7 +156,17 @@ button {
 }
 
 @media print {
-  .input {
+  #infoGatherer {
     display: none !important;
+  }
+
+  header {
+    background-color: #fff;
+  }
+
+  h1 {
+    margin: 0 auto;
+    top:0;
+
   }
 }
