@@ -1,19 +1,21 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=Numans&family=Special+Elite&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Nunito+Sans&display=swap');
 * {
   box-sizing:border-box;
+  font-size: 14px;
+  color: #172A3A;
+  outline: none;
 }
 
 body {
- font-family: 'Numans', sans-serif;
+ font-family: 'Nunito Sans', sans-serif;
 }
 
 header{
   width:90%;
   max-width: 1000px;
   margin: 2rem auto;
-  background-color: yellow;
+  background-color: #eef;
   padding: 15px;
   border-radius: 5px;
 }
@@ -23,7 +25,8 @@ h1 {
   margin: 0 auto 1rem;
   position: relative;
   top: -2rem;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #322F0B;
 }
 
 .input {
@@ -60,6 +63,13 @@ select {
   padding: .5rem;
 }
 
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: #322F0B;
+  color:#eef;
+}
+
 input,
 select {
   width:100%;
@@ -91,19 +101,18 @@ button {
 
 .good-take {
   border-radius: 50%;
-  border: 2px solid red;
+  border: 2px solid #5A0001;
 }
 
 .shot-row {
   display: grid;
   gap: 0;
   border-bottom: 1px dotted gray;
-  grid-template-columns: 1fr 1fr 4rem 1fr 1fr 1fr 3fr 1fr;
+  grid-template-columns: 1fr 1fr 3.5rem 1fr 1fr 1fr 3fr 1fr;
   margin: 0 20px;
 }
 
 .titles {
-  font-size: 1.2em;
   font-weight: 500;
 }
 
@@ -112,15 +121,11 @@ button {
 }
 
 .shot-row div {
-  height: 4rem;
-  overflow: auto;
+  min-height: 3rem;
   text-align: center;
   padding: 1rem .5rem;
 }
 
-.shot-row div:last-child {
-  /* flex-grow: 2; */
-}
 
 @media screen and (min-width:768px) {
   /* change the grid around */
@@ -162,11 +167,33 @@ button {
 
   header {
     background-color: #fff;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 5px;
   }
 
   h1 {
     margin: 0 auto;
     top:0;
+    font-size: 1.5em;
 
   }
+
+  .shot-row {
+    display: grid;
+    gap: 0;
+    border-bottom: 1px dotted gray;
+    grid-template-columns: 1fr 1fr 4rem 1fr 1fr 1fr 3fr 1fr;
+    margin: 0;
+  }
+
+  .titles {
+    font-weight: 500;
+  }
+
+  /* .shot-row:nth-child(2n) {
+    background-color: #ffe;
+  } */
+
+
 }
