@@ -49,7 +49,7 @@ logIt.addEventListener('submit', (e)=> {
                     <div class="">${take.value}</div>
                     <div class="">${lens.value}</div>
                     <div class="">${iso.value}</div>
-                    <div class="">${fStop.value}</div>
+                    <div class="">ƒ${fStop.value}</div>
                     <div class="">${notes.value}</div>
                     <div class="">${hours}:${minutes}</div>`;
 
@@ -88,7 +88,7 @@ logIt.addEventListener('submit', (e)=> {
 //reset fields when changing shot
 shot.addEventListener('input' , (e) => {
   take.value = 1;
-  reset(lens);
-  iso.value = 800;
-  fStop.value = 'ƒ1.8';
+  // reset(lens);
+  // iso.value = 800;
+  // fStop.value = 'ƒ1.8';
 })
