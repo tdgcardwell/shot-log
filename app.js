@@ -1,35 +1,3 @@
-// ========== On page load:
-
-function checkAndDisplay(){
-
-  // check localstorage for saved information
-
-  // IF there is stored take info, then add it to the page.
-
-};
-
-checkAndDisplay();
-
-
-// ========== When Log button clicked (or form submitted):
-
-on submit {
-
-  // prevent default
-
-  // make an array of the information
-
-  // add it to local storage
-
-  checkAndDisplay();
-
-};
-
-
-
-
-
-
 //warn and confirm before close or refresh
 window.addEventListener('beforeunload', function (e) {
     e.preventDefault();
@@ -39,29 +7,92 @@ window.addEventListener('beforeunload', function (e) {
 //bunch o' variables:
 const logIt = document.querySelector('#infoGatherer');
 const shotLog = document.querySelector('.shot-log');
-
-let scene = document.querySelector('#scene');
-let shot = document.querySelector('#shot');
-let take = document.querySelector('#take');
-let lens = document.querySelector('#lens');
-let iso = document.querySelector('#ISO');
-let fStop = document.querySelector('#Fstop');
-let notes = document.querySelector('#notes');
-let circle = document.querySelector('#circle');
-
-const date = new Date();
-const year = date.getFullYear();
-const month = date.getMonth();
-const day = date.getDate();
-
-// focus scene input on page load
-// scene.focus();
-
+let storedTakes;
 
 //reset function
 function reset(field) {
   field.value = "";
 }
+
+// Show the stored takes
+
+function checkAndDisplay(){
+
+  // check localstorage for saved information - if there are stored takes...
+  if (localStorage.length > 0) {
+    // ... get them...
+    storedTakes = JSON.parse(localStorage.getItem('locallyStored'));
+    console.log('takes retrieved');
+
+    // ... and add to the page:
+    // something to collect the info...
+    let takesToInsert = "";
+
+    // loop through each, building info
+    for (let i=0; i<storedTakes.length; i++) {
+      let eachOne = `<div class="new-member"><img class="avatar" src="imgs/members/member-${newMembers[i]["number"]}.jpg" alt='${newMembers[i]["name"]}'><div><h4>${newMembers[i]["name"]}</h4><span class="email">${newMembers[i]["email"]}</span></div><span class="date">${newMembers[i]["joinDate"]}</span></div>`;
+      takesToInsert += eachOne;
+    }
+
+    // add it.
+    $('#new-members h3').after(takesToInsert);
+
+  };
+}
+
+
+// ========== On page load:
+
+checkAndDisplay();
+
+/*
+======================================================
+When Log button clicked (or form submitted):
+======================================================
+*/
+
+logIt.addEventListener('submit', (e)=> {
+
+  // prevent default
+  e.preventDefault();
+
+  // when was this?
+  let date = new Date();
+
+  // what are we storing?
+  let scene = document.querySelector('#scene');
+  let shot = document.querySelector('#shot');
+  let take = document.querySelector('#take');
+  let lens = document.querySelector('#lens');
+  let iso = document.querySelector('#ISO');
+  let fStop = document.querySelector('#Fstop');
+  let notes = document.querySelector('#notes');
+  let circle = document.querySelector('#circle');
+
+  // make an array of the information
+  let thisTake =
+    {scene: scene.value,
+    shot: shot.value,
+    take: take.value,
+    lens: lens.value,
+    iso: iso.value,
+    fStop: fStop.value,
+    notes: notes.value,
+    dateTime: date
+    };
+
+  if ($(circle).is(":checked")) {
+      thisTake.circle = true;
+  } else {
+      thisTake.circle = false;
+  }
+
+  // add it to local storage
+
+  // then update the displayed info
+  checkAndDisplay();
+
+});
 
 
 /*
@@ -116,22 +147,7 @@ storage
 ======================================================
 */
 
-// gotta declare it outside of a function
-let storedSettings;
 
-// if there are stored settings...
-if (localStorage.length > 0) {
-  // ... get those stored settings
-  storedSettings = JSON.parse(localStorage.getItem('locallyStored'));
-  console.log('settings retrieved');
-} else {
-  // otherwise default to false for both, and 0 for timezone
-  storedSettings = {
-    emailNotifications : false,
-    setProfileToPublic : false,
-    timeZone: 0
-  };
-}
 
 // and adjust the sliders
 let emailNotifications = $('#emailNotifications');
@@ -231,13 +247,17 @@ cancelButton.click(function() {
 */
 
 
-//log a scene
-logIt.addEventListener('submit', (e)=> {
-  e.preventDefault();
 
-  const time = new Date();
-  const hours = time.getHours();
-  const minutes = time.getMinutes();
+
+
+
+  // --------------------------
+
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
 
   let takeInfo =
                   ` <div class="">${scene.value}</div>
@@ -248,7 +268,6 @@ logIt.addEventListener('submit', (e)=> {
                     <div class="">ƒ${fStop.value}</div>
                     <div class="">${notes.value}</div>
                     <div class="">${hours}:${minutes}</div>`;
-
 
   //prob better way to do this
   if (circle.checked){
@@ -279,7 +298,7 @@ logIt.addEventListener('submit', (e)=> {
   //focus shot input
   shot.focus();
 
-});
+
 
 //reset fields when changing shot
 shot.addEventListener('input' , (e) => {
