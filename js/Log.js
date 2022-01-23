@@ -12,6 +12,7 @@ class Log{
   }
 
   store(){
+    this.setups = setups;
     localStorage.setItem(`${this.project}-log`, JSON.stringify(this));
     console.log(`saved as ${this.project}-log`);
   }

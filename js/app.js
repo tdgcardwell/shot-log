@@ -1,3 +1,9 @@
+//warn and confirm before close or refresh
+window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+    e.returnValue = '';
+});
+
 let log; // we're either starting a new one, or loading one.
 
 // ask if new or loading
@@ -37,3 +43,27 @@ function logIt(scene,shot,take){
   log.addTake(x);
   return "Take Logged";
 }
+
+// ============================================
+
+//log a scene
+
+let takeInfo = document.querySelector('#takeInfo');
+let scene = document.querySelector('#scene');
+let shot = document.querySelector('#shot');
+let take = document.querySelector('#take');
+
+takeInfo.addEventListener('submit', (e)=> {
+  e.preventDefault();
+  logIt(scene.value,shot.value,take.value);
+  take.value ++;
+});
+
+// =============================
+// save the log.
+
+let saveButton = document.querySelector('#save-button');
+saveButton.addEventListener('click', (e)=> {
+  e.preventDefault();
+  log.store();
+});
