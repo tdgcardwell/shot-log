@@ -8,10 +8,16 @@ class Take {
 
     const date = new Date();
     const hours = date.getHours();
-    const minutes = date.getMinutes();
+    let minutes = date.getMinutes();
+    if (minutes<10){
+      minutes = `0${minutes}`;
+    }
     const day = date.getDate();
     let month = date.getMonth();
     month += 1; // to adjust for starting at 0.
+    if (month<10){
+      month = `0${month}`;
+    }
     const year = date.getFullYear();
     this.dateTime = `${hours}:${minutes} - ${year}.${month}.${day}`;
 

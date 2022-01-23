@@ -22,7 +22,12 @@ function recall(saved){
 
   let stored = localStorage.getItem(saved);
   if (stored) {
-    log = JSON.parse(stored);
+    let _log= JSON.parse(stored);
+     // apply these to a new One
+
+    log = new Log(_log.project,_log.director,_log.camera);
+    log.takes = _log.takes;
+    log.setups = _log.setups;
     console.log(`${saved} loaded`);
   } else {
     console.log('no log found with that name');
@@ -66,4 +71,14 @@ let saveButton = document.querySelector('#save-button');
 saveButton.addEventListener('click', (e)=> {
   e.preventDefault();
   log.store();
+});
+
+// =============================
+// print the log to the page
+
+let logTable = document.querySelector('#takeLog');
+let printButton = document.querySelector('#print-button');
+printButton.addEventListener('click', (e)=> {
+  e.preventDefault();
+  log.print();
 });

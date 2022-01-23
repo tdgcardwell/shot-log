@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shot Log v2.0</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
 
 
     <header>
       <h1>Shot Log v2.0</h1>
+      <a href="version-one/index.html">See Version One</a>
+    </header>
 
+    <section>
       <button type="button" name="save-button" id="save-button">Save Log</button>
+      <button type="button" name="print-button" id="print-button">Show Log</button>
 
       <form class="" id="takeInfo">
 
@@ -27,8 +33,28 @@
         <button type="submit" name="button">Log it!</button>
 
       </form>
+    </section>
 
-    </header>
+    <section>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Scene</th>
+            <th>Shot</th>
+            <th>Take</th>
+            <th>Time & Date</th>
+          </tr>
+        </thead>
+          <tbody id="takeLog">
+
+          </tbody>
+      </table>
+
+    </section>
+
+
+
 
 
   </body>
