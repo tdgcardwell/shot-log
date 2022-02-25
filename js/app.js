@@ -13,20 +13,12 @@ newButton.addEventListener('click', (e)=> {
   e.preventDefault();
   log = new Log(prompt('Project Name'),prompt('Direcor Name'),prompt('DoP'));
   console.log(`Project Log created`);
+  log.store();
+  generateDropdown(); //re-generate dropdown options.
+  log.print(); //load this one on the page.
 });
 
 
-// ask if new or loading
-// if (confirm('Start New Log?')) {
-//   log = new Log(prompt('Project Name'),prompt('Direcor Name'),prompt('DoP'));
-//   console.log(`Project Log created`);
-// } else {
-//   let logToLoad = prompt('Log to Load?');
-//   recall(logToLoad);
-//
-// }
-
-// if load, then get from local storage
 // to recall saved log
 function recall(saved){
 
@@ -39,6 +31,7 @@ function recall(saved){
     log.takes = _log.takes;
     log.setups = _log.setups;
     console.log(`${saved} loaded`);
+    log.print(); //load this one on the page.
   } else {
     console.log('no log found with that name');
   }
@@ -55,7 +48,7 @@ function generateDropdown() {
 
     if (localStorage.hasOwnProperty(key)) {
 
-        console.log(`${key}: ${localStorage[key]}`);
+        // console.log(`${key}: ${localStorage[key]}`);
         options += `<option value="${key}">${key}</option>`;
 
     }
@@ -142,9 +135,10 @@ saveButton.addEventListener('click', (e)=> {
 
 let logTable = document.querySelector('#takeLog');
 let printButton = document.querySelector('#print-button');
-printButton.addEventListener('click', (e)=> {
-  e.preventDefault();
-  log.print();
-  console.log(chosenLog);
 
-});
+// printButton.addEventListener('click', (e)=> {
+//   e.preventDefault();
+//   log.print();
+//   console.log(chosenLog);
+//
+// });
