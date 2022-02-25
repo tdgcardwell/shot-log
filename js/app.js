@@ -51,6 +51,21 @@ for (const key in localStorage) {
 selectDropdown.innerHTML += options;
 
 
+// then to select and load...
+
+let chosenLog;
+
+selectDropdown.addEventListener('change', (e)=> {
+  e.preventDefault();
+  // log.print();
+  chosenLog = selectDropdown.value;
+  console.log(chosenLog);
+  recall(chosenLog);
+});
+
+
+
+
 
 // =============================================
 
@@ -114,4 +129,6 @@ let printButton = document.querySelector('#print-button');
 printButton.addEventListener('click', (e)=> {
   e.preventDefault();
   log.print();
+  console.log(chosenLog);
+
 });
