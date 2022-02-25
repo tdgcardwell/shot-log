@@ -7,15 +7,24 @@
 
 let log; // we're either starting a new one, or loading one.
 
-// ask if new or loading
-if (confirm('Start New Log?')) {
+//New Log
+let newButton = document.querySelector('#new-button');
+newButton.addEventListener('click', (e)=> {
+  e.preventDefault();
   log = new Log(prompt('Project Name'),prompt('Direcor Name'),prompt('DoP'));
   console.log(`Project Log created`);
-} else {
-  let logToLoad = prompt('Log to Load?');
-  recall(logToLoad);
+});
 
-}
+
+// ask if new or loading
+// if (confirm('Start New Log?')) {
+//   log = new Log(prompt('Project Name'),prompt('Direcor Name'),prompt('DoP'));
+//   console.log(`Project Log created`);
+// } else {
+//   let logToLoad = prompt('Log to Load?');
+//   recall(logToLoad);
+//
+// }
 
 // if load, then get from local storage
 // to recall saved log
