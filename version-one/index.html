@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shot Log</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Shot Log</h1>
+
+      <form id="infoGatherer">
+        <div class="input">
+          <div class="">
+            <label for="scene">Scene</label>
+            <input type="text" name="scene" value="" id="scene" placeholder="1">
+          </div>
+
+          <div class="">
+            <label for="shot">Shot</label>
+            <input type="text" name="shot" value="" id="shot" placeholder="blank first, then A, B...">
+          </div>
+
+          <div class="">
+            <label for="take">Take</label>
+            <input type="text" name="take" value="1" id="take">
+          </div>
+
+          <div class="">
+            <label for="lens">Lens</label>
+            <input type="text" name="Lens" value="" id="lens" placeholder="17mm">
+          </div>
+
+          <div class="">
+            <label for="ISO">ISO</label>
+            <input type="text" id='ISO' name="ISO" placeholder="800" value="">
+          </div>
+
+          <div class="">
+            <label for="Fstop">Fstop</label>
+            <input type="text" name="Fstop" value="" id="Fstop" placeholder="1.8">
+          </div>
+
+          <div class="notes">
+            <label for="notes">Notes</label>
+            <textarea name="notes" rows="10" cols="15" id="notes"></textarea>
+          </div>
+
+          <div class="circle">
+            <label for="circle">Circle the Take?</label>
+            <input type="checkbox" name="circle" id="circle">
+          </div>
+
+          <button class="addShot">Log it!</button>
+
+        </div>
+      </form>
+      <p>An App by Thomas Cardwell</p>
+    </header>
+
+
+    <div class="the-log shot-log">
+      <div class="shot-row titles">
+        <div class="">
+          Scene
+        </div>
+        <div class="">
+          Shot
+        </div>
+        <div class="">
+          Take
+        </div>
+        <div class="">
+          Lens
+        </div>
+        <div class="">
+          ISO
+        </div>
+        <div class="">
+          Fstop
+        </div>
+        <div class="">
+          Notes
+        </div>
+        <div class="">
+          Logged At
+        </div>
+      </div>
+
+    </div>
+
+    <script src="app.js" charset="utf-8"></script>
+
+  </body>
+</html>

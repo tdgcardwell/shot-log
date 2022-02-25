@@ -16,90 +16,89 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+
+
     <header>
       <h1>Shot Log</h1>
+      <span>v2.0</span>
 
-      <form id="infoGatherer">
-        <div class="input">
-          <div class="">
-            <label for="scene">Scene</label>
-            <input type="text" name="scene" value="" id="scene" placeholder="1">
-          </div>
+      <button type="button" name="save-button" id="save-button">Save Log</button>
 
-          <div class="">
-            <label for="shot">Shot</label>
-            <input type="text" name="shot" value="" id="shot" placeholder="blank first, then A, B...">
-          </div>
 
-          <div class="">
-            <label for="take">Take</label>
-            <input type="text" name="take" value="1" id="take">
-          </div>
+      <select class="" name="select-log" id="select-log">
+        <option value="">Choose Log to Load</option>
+      </select>
+      <button type="button" name="print-button" id="print-button">Show Log</button>
 
-          <div class="">
-            <label for="lens">Lens</label>
-            <input type="text" name="Lens" value="" id="lens" placeholder="17mm">
-          </div>
-
-          <div class="">
-            <label for="ISO">ISO</label>
-            <input type="text" id='ISO' name="ISO" placeholder="800" value="">
-          </div>
-
-          <div class="">
-            <label for="Fstop">Fstop</label>
-            <input type="text" name="Fstop" value="" id="Fstop" placeholder="1.8">
-          </div>
-
-          <div class="notes">
-            <label for="notes">Notes</label>
-            <textarea name="notes" rows="10" cols="15" id="notes"></textarea>
-          </div>
-
-          <div class="circle">
-            <label for="circle">Circle the Take?</label>
-            <input type="checkbox" name="circle" id="circle">
-          </div>
-
-          <button class="addShot">Log it!</button>
-
-        </div>
-      </form>
-      <p>An App by Thomas Cardwell</p>
     </header>
 
+    <section>
+      <h2>Camera Settings</h2>
 
-    <div class="the-log shot-log">
-      <div class="shot-row titles">
-        <div class="">
-          Scene
-        </div>
-        <div class="">
-          Shot
-        </div>
-        <div class="">
-          Take
-        </div>
-        <div class="">
-          Lens
-        </div>
-        <div class="">
-          ISO
-        </div>
-        <div class="">
-          Fstop
-        </div>
-        <div class="">
-          Notes
-        </div>
-        <div class="">
-          Logged At
-        </div>
-      </div>
+      <form class="" id="cameraSetup">
 
-    </div>
+        <label for="lens">Lens</label>
+        <input type="text" name="lens" value="" id="lens" placeholder="17">
 
-    <script src="app.js" charset="utf-8"></script>
+        <label for="iso">ISO</label>
+        <input type="text" name="iso" value="" id="iso" placeholder="400">
 
+        <label for="fstop">fstop</label>
+        <input type="text" name="fstop" value="" id="fstop" placeholder="5.6">
+
+        <button type="submit" name="button">Set</button>
+
+      </form>
+
+    </section>
+
+    <section>
+      <h2>Take Info</h2>
+
+      <form class="" id="takeInfo">
+
+        <label for="scene">Scene</label>
+        <input type="text" name="scene" value="" id="scene" placeholder="1">
+
+        <label for="shot">Shot</label>
+        <input type="text" name="shot" value="" id="shot" placeholder="">
+
+        <label for="take">Take</label>
+        <input type="text" name="take" value="1" id="take">
+
+        <button type="submit" name="button">Log it!</button>
+
+      </form>
+    </section>
+
+    <section>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Scene</th>
+            <th>Shot</th>
+            <th>Take</th>
+            <th>Time & Date</th>
+            <th>Lens (mm)</th>
+            <th>ISO</th>
+            <th>fstop</th>
+          </tr>
+        </thead>
+          <tbody id="takeLog">
+
+          </tbody>
+      </table>
+
+    </section>
+
+
+
+
+    <a href="version-one/index.html">See Version One</a>
   </body>
+  <script src="js/Camera.js" charset="utf-8"></script>
+  <script src="js/Take.js" charset="utf-8"></script>
+  <script src="js/Log.js" charset="utf-8"></script>
+  <script src="js/app.js" charset="utf-8"></script>
 </html>
