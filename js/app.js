@@ -37,18 +37,25 @@ function recall(saved){
 // =============================================
 
 let selectDropdown = document.querySelector('#select-log')
-let options = '';
-for (const key in localStorage) {
 
-  if (localStorage.hasOwnProperty(key)) {
+function generateDropdown() {
+  let options = `<option value="">Choose Log to Load</option>`;
+  selectDropdown.innerHTML = options;
 
-      console.log(`${key}: ${localStorage[key]}`);
-      options += `<option value="${key}">${key}</option>`;
+  for (const key in localStorage) {
 
+    if (localStorage.hasOwnProperty(key)) {
+
+        console.log(`${key}: ${localStorage[key]}`);
+        options += `<option value="${key}">${key}</option>`;
+
+    }
   }
+
+  selectDropdown.innerHTML = options;
 }
 
-selectDropdown.innerHTML += options;
+generateDropdown();
 
 
 // then to select and load...
@@ -57,7 +64,6 @@ let chosenLog;
 
 selectDropdown.addEventListener('change', (e)=> {
   e.preventDefault();
-  // log.print();
   chosenLog = selectDropdown.value;
   console.log(chosenLog);
   recall(chosenLog);
@@ -119,6 +125,7 @@ let saveButton = document.querySelector('#save-button');
 saveButton.addEventListener('click', (e)=> {
   e.preventDefault();
   log.store();
+  generateDropdown(); //re-generate dropdown options.
 });
 
 // =============================
