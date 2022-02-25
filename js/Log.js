@@ -28,6 +28,9 @@ class Log{
                             <td>${this.takes[i].shot}</td>
                             <td>${this.takes[i].take}</td>
                             <td>${this.takes[i].dateTime}</td>
+                            <td>${this.takes[i].camera.lens}</td>
+                            <td>${this.takes[i].camera.iso}</td>
+                            <td>${this.takes[i].camera.fstop}</td>
                             </tr>`;
     }
 

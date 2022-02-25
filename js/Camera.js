@@ -8,6 +8,7 @@ class CameraSetup {
     this.fstop = fstop;
     this._notes = [];
     setups.push(this); //when a setup is created, add to setups array.
+    countSetups();
   }
 
 
@@ -20,3 +21,15 @@ class CameraSetup {
   }
 
 }
+
+function countSetups(){
+  if (setups.length > 0) {
+    console.log(`${setups.length} set ups`);
+    // add a dropdown with setups?
+
+  } else {
+    console.log(`no setups`);
+  }
+}
+
+countSetups();

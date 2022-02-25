@@ -1,8 +1,9 @@
 //warn and confirm before close or refresh
-window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
-    e.returnValue = '';
-});
+
+// window.addEventListener('beforeunload', function (e) {
+//     e.preventDefault();
+//     e.returnValue = '';
+// });
 
 let log; // we're either starting a new one, or loading one.
 
@@ -35,14 +36,45 @@ function recall(saved){
 }
 // =============================================
 
+let selectDropdown = document.querySelector('#select-log')
+let options = '';
+for (const key in localStorage) {
 
-let currentSetup = ""; // current CameraSetup
+  if (localStorage.hasOwnProperty(key)) {
+
+      console.log(`${key}: ${localStorage[key]}`);
+      options += `<option value="${key}">${key}</option>`;
+
+  }
+}
+
+selectDropdown.innerHTML += options;
+
+
+
+// =============================================
+
+
+let currentSetup = {}; // current CameraSetup
 
 // create a setup, then set currentSetup to that.
 // creating as separate allows to switch back and forth.
 
+let cameraSetup = document.querySelector('#cameraSetup');
 
+// let setupCount = 1;
 
+cameraSetup.addEventListener('submit', (e)=> {
+  e.preventDefault();
+  let lens = document.querySelector('#lens');
+  let iso = document.querySelector('#iso');
+  let fstop = document.querySelector('#fstop');
+  let cs = new CameraSetup(lens.value,iso.value,fstop.value);
+  console.log(cs);
+  currentSetup = cs;
+});
+
+// =====================
 function logIt(scene,shot,take){
   let x = new Take(currentSetup,scene,shot,take);
   log.addTake(x);
@@ -62,6 +94,7 @@ takeInfo.addEventListener('submit', (e)=> {
   e.preventDefault();
   logIt(scene.value,shot.value,take.value);
   take.value ++;
+  log.print();
 });
 
 // =============================
