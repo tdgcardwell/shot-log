@@ -1,0 +1,47 @@
+/* list.js placeholder styles */
+.sort.asc, .sort.desc {
+  background-color: yellow;
+}
+.sort.asc::after {
+  content: "\002B06";
+  padding-left: 3px;
+}
+.sort.desc::after {
+  content: "\002B07";
+  padding-left: 3px
+}
+
+.pagination li {
+  display:inline-block;
+  padding:5px;
+}
+
+
+// color variables (for now)
+// via wemakepalettes : No. 59: Limey - https://www.instagram.com/p/CR9IHFdLYLo/
+
+$light : #f6f4f5;
+$midLight: #d2d588;
+$mid:#beca1e;
+$midDark: #80a001;
+$dark:#697d06;
+
+
+body {
+  background-color: $light;
+  color: $dark;
+  margin: 1rem;
+}
+
+button {
+  background-color: $mid;
+  padding: .5rem;
+  margin: 1rem;
+  border:none;
+  transition: .3s;
+
+  &:hover {
+    background-color: $midLight;
+  }
+
+}
