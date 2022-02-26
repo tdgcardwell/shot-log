@@ -26,6 +26,7 @@ function countSetups(){
   if (setups.length > 0) {
     console.log(`${setups.length} set ups`);
     // add a dropdown with setups?
+    generateSetupDropdown()
 
   } else {
     console.log(`no setups`);

@@ -1,3 +1,22 @@
+/*
+let thisTake =
+  {scene: scene.value,
+  shot: shot.value,
+  take: take.value,
+  lens: lens.value,
+  iso: iso.value,
+  fStop: fStop.value,
+  notes: notes.value,
+  dateTime: date
+  };
+
+if ($(circle).is(":checked")) {
+    thisTake.circle = true;
+} else {
+    thisTake.circle = false;
+}
+*/
+
 class Take {
   constructor(camera,scene,shot,take){
     this.scene = scene;

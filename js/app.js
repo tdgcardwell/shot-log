@@ -32,6 +32,7 @@ function recall(saved){
     log.setups = _log.setups;
     console.log(`${saved} loaded`);
     log.print(); //load this one on the page.
+    setups = log.setups;
   } else {
     console.log('no log found with that name');
   }
@@ -69,6 +70,7 @@ selectDropdown.addEventListener('change', (e)=> {
   chosenLog = selectDropdown.value;
   console.log(chosenLog);
   recall(chosenLog);
+  countSetups();
 });
 
 
@@ -97,6 +99,29 @@ cameraSetup.addEventListener('submit', (e)=> {
   currentSetup = cs;
 });
 
+// =============================
+// setup dropdown
+
+let setupDropdown = document.querySelector('#select-setup')
+
+// only gonna get called after checking if there are setups.
+function generateSetupDropdown() {
+  let options = `<option value="">Previous Setups`;
+  setupDropdown.innerHTML = options;
+
+  // iterate over saved setups
+  for (const key in localStorage) {
+
+    // console.log('code here to generate setup dropdown');
+
+  }
+
+  setupDropdown.innerHTML = options;
+}
+
+
+
+
 // =====================
 function logIt(scene,shot,take){
   let x = new Take(currentSetup,scene,shot,take);
@@ -118,17 +143,19 @@ takeInfo.addEventListener('submit', (e)=> {
   logIt(scene.value,shot.value,take.value);
   take.value ++;
   log.print();
+  log.store();
+  generateDropdown(); //re-generate dropdown options.
 });
 
 // =============================
 // save the log.
 
-let saveButton = document.querySelector('#save-button');
-saveButton.addEventListener('click', (e)=> {
-  e.preventDefault();
-  log.store();
-  generateDropdown(); //re-generate dropdown options.
-});
+// let saveButton = document.querySelector('#save-button');
+// saveButton.addEventListener('click', (e)=> {
+//   e.preventDefault();
+//   log.store();
+//   generateDropdown(); //re-generate dropdown options.
+// });
 
 // =============================
 // print the log to the page
