@@ -35,14 +35,14 @@ class Log{
     logTable.innerHTML=''; //reset it first.
     for (let i=0; i<this.takes.length; i++) {
       logTable.innerHTML+= `<tr>
-                            <td>${this.takes[i].scene}</td>
-                            <td>${this.takes[i].shot}</td>
-                            <td>${this.takes[i].take}</td>
-                            <td>${this.takes[i].dateTime}</td>
-                            <td>${this.takes[i].camera.lens}</td>
-                            <td>${this.takes[i].camera.iso}</td>
-                            <td>${this.takes[i].camera.fstop}</td>
-                            <td>${this.takes[i].note}</td>
+                            <td class="tScene">${this.takes[i].scene}</td>
+                            <td class="tShot">${this.takes[i].shot}</td>
+                            <td class="tTake">${this.takes[i].take}</td>
+                            <td class="tDate">${this.takes[i].dateTime}</td>
+                            <td class="tLens>${this.takes[i].camera.lens}</td>
+                            <td class="tIso">${this.takes[i].camera.iso}</td>
+                            <td class="tFstop">${this.takes[i].camera.fstop}</td>
+                            <td class="tNote">${this.takes[i].note}</td>
                             </tr>`;
     }
 

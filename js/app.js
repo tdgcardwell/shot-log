@@ -25,6 +25,7 @@ function recall(saved){
     log.setups = _log.setups;
     console.log(`${saved} loaded`);
     log.print(); //load this one on the page.
+    listify()
     setups = log.setups;
   } else {
     console.log('no log found with that name');
@@ -130,6 +131,7 @@ takeInfo.addEventListener('submit', (e)=> {
   logIt(scene.value,shot.value,take.value,note.value);
   take.value ++;
   log.print();
+  listify()
   log.store();
   generateDropdown(); //re-generate dropdown options.
 });
@@ -196,3 +198,12 @@ removeButton.addEventListener('click', (e)=> {
   generateDropdown(); //re-generate dropdown options.
 
 });
+
+// ================= list.js
+
+function listify(){
+  var options = {
+    valueNames: [ 'tScene', 'tShot', 'tTake', 'tDate', 'tLens', 'tIso', 'tFstop', 'tNote' ]
+  };
+  var takeList = new List('tLog', options);
+}
