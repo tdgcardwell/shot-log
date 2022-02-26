@@ -2,15 +2,14 @@
 
 ## V2.0
 
-- class(es)
-- local storage
-  - [ ] dropdown for saved logs
-  - [ ] buttons instead of prompts on load
+  - [ x ] class(es)
+  - [ x ]local storage
+  - [ x ] dropdown for saved logs
+  - [ x ] buttons instead of prompts on load
   - [ ] dropdown for setups
-  - [ ] notes fields
-  - [ ] take circling
-  - [ ] search w/ list.js
-- etc.
+  - [ x ] notes fields
+  - [ x ] take marking
+  - [ x ] search w/ list.js
 
 
 ## Version One - Simple Shot Log App
