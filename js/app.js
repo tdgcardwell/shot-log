@@ -210,3 +210,28 @@ function listify(){
   };
   var takeList = new List('tLog', options);
 }
+
+// ------ marking
+$( "#takeLog").on( "click", "tr .tMark input", function() {
+
+  let takeNumber = $(this).val();
+
+  let thisTake = log.takes[takeNumber];
+
+  if (thisTake.mark === false) { // if its not marked
+    thisTake.mark = true; // mark it
+  } else {
+    thisTake.mark = false; // otherwise un-mark it.
+  }
+
+  // console.log( thisTake );
+  log.store(); // save your changes.
+
+  // now figure out immediate highlight...
+
+  let thisRow = $(this).parents("tr");
+  thisRow.toggleClass( "marked" );
+
+  // console.log(thisRow);
+
+});

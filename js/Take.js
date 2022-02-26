@@ -34,13 +34,4 @@ class Take {
   //   this._notes.push(note);
   // }
 
-  markSelect() {
-    if (this.mark === false) {
-      this.mark = true;
-    } else {
-      this.mark = false;
-    }
-  }
-
-
 }
