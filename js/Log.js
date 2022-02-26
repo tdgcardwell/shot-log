@@ -36,13 +36,16 @@ class Log{
     for (let i=0; i<this.takes.length; i++) {
 
       let isItChecked;
+      let markedClass;
       let isItMarked = this.takes[i].mark;
       if (isItMarked){
         isItChecked = "checked";
+        markedClass = 'class="marked"';
       }else{
         isItChecked = "";
+        markedClass = "";
       }
-      logTable.innerHTML+= `<tr>
+      logTable.innerHTML+= `<tr ${markedClass}>
                             <td class="tScene">${this.takes[i].scene}</td>
                             <td class="tShot">${this.takes[i].shot}</td>
                             <td class="tTake">${this.takes[i].take}</td>
