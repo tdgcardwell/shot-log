@@ -232,6 +232,6 @@ $( "#takeLog").on( "click", "tr .tMark input", function() {
   let thisRow = $(this).parents("tr");
   thisRow.toggleClass( "marked" );
 
-  // console.log(thisRow);
+  console.log(thisRow);
 
 });
