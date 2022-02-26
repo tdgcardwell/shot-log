@@ -134,6 +134,7 @@ takeInfo.addEventListener('submit', (e)=> {
   listify()
   log.store();
   generateDropdown(); //re-generate dropdown options.
+  note.value = ''; //clear notes.
 });
 
 // =============================
