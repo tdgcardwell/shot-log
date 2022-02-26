@@ -1,28 +1,10 @@
-/*
-let thisTake =
-  {scene: scene.value,
-  shot: shot.value,
-  take: take.value,
-  lens: lens.value,
-  iso: iso.value,
-  fStop: fStop.value,
-  notes: notes.value,
-  dateTime: date
-  };
-
-if ($(circle).is(":checked")) {
-    thisTake.circle = true;
-} else {
-    thisTake.circle = false;
-}
-*/
-
 class Take {
-  constructor(camera,scene,shot,take){
+  constructor(camera,scene,shot,take,note){
     this.scene = scene;
     this.shot = shot;
     this.take = take;
     this.camera = camera;
+    this.note = note;
     this.sync = true;
 
     const date = new Date();
@@ -40,16 +22,16 @@ class Take {
     const year = date.getFullYear();
     this.dateTime = `${hours}:${minutes} - ${year}.${month}.${day}`;
 
-    this._notes = [];
+    // this._notes = [];
   }
 
 
-  get notes(){
-    return this._notes;
-  }
-
-  set notes(note){
-    this._notes.push(note);
-  }
+  // get notes(){
+  //   return this._notes;
+  // }
+  //
+  // set notes(note){
+  //   this._notes.push(note);
+  // }
 
 }

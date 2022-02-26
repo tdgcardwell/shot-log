@@ -42,6 +42,7 @@ class Log{
                             <td>${this.takes[i].camera.lens}</td>
                             <td>${this.takes[i].camera.iso}</td>
                             <td>${this.takes[i].camera.fstop}</td>
+                            <td>${this.takes[i].note}</td>
                             </tr>`;
     }
 

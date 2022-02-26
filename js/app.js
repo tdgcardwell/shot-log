@@ -109,8 +109,8 @@ function generateSetupDropdown() {
 
 
 // =====================
-function logIt(scene,shot,take){
-  let x = new Take(currentSetup,scene,shot,take);
+function logIt(scene,shot,take,note){
+  let x = new Take(currentSetup,scene,shot,take,note);
   log.addTake(x);
   return "Take Logged";
 }
@@ -123,10 +123,11 @@ let takeInfo = document.querySelector('#takeInfo');
 let scene = document.querySelector('#scene');
 let shot = document.querySelector('#shot');
 let take = document.querySelector('#take');
+let note = document.querySelector('#note');
 
 takeInfo.addEventListener('submit', (e)=> {
   e.preventDefault();
-  logIt(scene.value,shot.value,take.value);
+  logIt(scene.value,shot.value,take.value,note.value);
   take.value ++;
   log.print();
   log.store();
