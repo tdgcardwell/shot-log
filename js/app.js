@@ -204,7 +204,9 @@ removeButton.addEventListener('click', (e)=> {
 
 function listify(){
   var options = {
-    valueNames: [ 'tScene', 'tShot', 'tTake', 'tDate', 'tLens', 'tIso', 'tFstop', 'tNote' ]
+    valueNames: [ 'tScene', 'tShot', 'tTake', 'tDate', 'tLens', 'tIso', 'tFstop', 'tNote' ],
+    page: 10,
+    pagination: true
   };
   var takeList = new List('tLog', options);
 }

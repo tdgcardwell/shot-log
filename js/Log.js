@@ -39,7 +39,7 @@ class Log{
                             <td class="tShot">${this.takes[i].shot}</td>
                             <td class="tTake">${this.takes[i].take}</td>
                             <td class="tDate">${this.takes[i].dateTime}</td>
-                            <td class="tLens>${this.takes[i].camera.lens}</td>
+                            <td class="tLens">${this.takes[i].camera.lens}</td>
                             <td class="tIso">${this.takes[i].camera.iso}</td>
                             <td class="tFstop">${this.takes[i].camera.fstop}</td>
                             <td class="tNote">${this.takes[i].note}</td>
