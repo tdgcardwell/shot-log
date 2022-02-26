@@ -18,6 +18,17 @@ class Log{
   }
 
   print(){
+
+    //update project header details.
+    let proj = document.querySelector('#proj');
+    proj.textContent = this.project;
+
+    let dir = document.querySelector('#dir');
+    dir.textContent = this.director;
+
+    let dop = document.querySelector('#dop');
+    dop.textContent = this.camera;
+
     /*
     for each take add a row to the table
     */

@@ -208,17 +208,11 @@ cancelButton.click(function() {
 // =================================================
 
 //reset fields when changing shot
-shot.addEventListener('input' , (e) => {
+shot.addEventListener('change' , (e) => {
   take.value = 1;
-  // reset(lens);
-  // iso.value = 800;
-  // fStop.value = 'ƒ1.8';
 })
 
 //reset take when changing scene
-scene.addEventListener('input' , (e) => {
+scene.addEventListener('change' , (e) => {
   take.value = 1;
-  // reset(lens);
-  // iso.value = 800;
-  // fStop.value = 'ƒ1.8';
 })

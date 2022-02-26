@@ -1,10 +1,3 @@
-//warn and confirm before close or refresh
-
-// window.addEventListener('beforeunload', function (e) {
-//     e.preventDefault();
-//     e.returnValue = '';
-// });
-
 let log; // we're either starting a new one, or loading one.
 
 //New Log
@@ -62,7 +55,6 @@ generateDropdown();
 
 
 // then to select and load...
-
 let chosenLog;
 
 selectDropdown.addEventListener('change', (e)=> {
@@ -73,13 +65,7 @@ selectDropdown.addEventListener('change', (e)=> {
   countSetups();
 });
 
-
-
-
-
 // =============================================
-
-
 let currentSetup = {}; // current CameraSetup
 
 // create a setup, then set currentSetup to that.
@@ -131,7 +117,7 @@ function logIt(scene,shot,take){
 
 // ============================================
 
-//log a scene
+//log a take
 
 let takeInfo = document.querySelector('#takeInfo');
 let scene = document.querySelector('#scene');
@@ -163,9 +149,18 @@ takeInfo.addEventListener('submit', (e)=> {
 let logTable = document.querySelector('#takeLog');
 let printButton = document.querySelector('#print-button');
 
-// printButton.addEventListener('click', (e)=> {
-//   e.preventDefault();
-//   log.print();
-//   console.log(chosenLog);
-//
-// });
+
+
+// =============================
+// update take/shot if shot/scene change.
+
+//reset fields when changing shot
+shot.addEventListener('change' , (e) => {
+  take.value = 1;
+})
+
+//reset take when changing scene
+scene.addEventListener('change' , (e) => {
+  shot.value = '';
+  take.value = 1;
+})
