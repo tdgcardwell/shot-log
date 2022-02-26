@@ -26,6 +26,8 @@ $mid:#beca1e;
 $midDark: #80a001;
 $dark:#697d06;
 
+$warningColor: #8d350c;
+
 
 body {
   background-color: $light;
@@ -44,4 +46,20 @@ button {
     background-color: $midLight;
   }
 
+}
+
+#remove-button {
+  background-color: $light;
+  color: $dark;
+  border: 1px solid currentColor;
+
+  &:hover {
+    background-color: $warningColor;
+    color: $light;
+    // border: 1px solid currentColor;
+  }
+}
+
+tr:nth-child(even) {
+  background-color: $midLight;
 }
