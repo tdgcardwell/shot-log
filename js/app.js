@@ -156,12 +156,12 @@ let printButton = document.querySelector('#print-button');
 // update take/shot if shot/scene change.
 
 //reset fields when changing shot
-shot.addEventListener('change' , (e) => {
+shot.addEventListener('input' , (e) => {
   take.value = 1;
 })
 
 //reset take when changing scene
-scene.addEventListener('change' , (e) => {
+scene.addEventListener('input' , (e) => {
   shot.value = '';
   take.value = 1;
 })
