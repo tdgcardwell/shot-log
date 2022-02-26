@@ -34,6 +34,14 @@ class Log{
     */
     logTable.innerHTML=''; //reset it first.
     for (let i=0; i<this.takes.length; i++) {
+
+      let isItChecked;
+      let isItMarked = this.takes[i].mark;
+      if (isItMarked){
+        isItChecked = "checked";
+      }else{
+        isItChecked = "";
+      }
       logTable.innerHTML+= `<tr>
                             <td class="tScene">${this.takes[i].scene}</td>
                             <td class="tShot">${this.takes[i].shot}</td>
@@ -43,7 +51,7 @@ class Log{
                             <td class="tIso">${this.takes[i].camera.iso}</td>
                             <td class="tFstop">${this.takes[i].camera.fstop}</td>
                             <td class="tNote">${this.takes[i].note}</td>
-                            <td class="tMark">${this.takes[i].mark}</td>
+                            <td class="tMark"><input type="checkbox" name="" value="" ${isItChecked}></td>
                             </tr>`;
     }
 
