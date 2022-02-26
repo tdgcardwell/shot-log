@@ -43,6 +43,7 @@ class Log{
                             <td class="tIso">${this.takes[i].camera.iso}</td>
                             <td class="tFstop">${this.takes[i].camera.fstop}</td>
                             <td class="tNote">${this.takes[i].note}</td>
+                            <td class="tMark">${this.takes[i].mark}</td>
                             </tr>`;
     }
 

@@ -5,7 +5,7 @@ class Take {
     this.take = take;
     this.camera = camera;
     this.note = note;
-    this.sync = true;
+    this.mark = false;
 
     const date = new Date();
     const hours = date.getHours();
@@ -33,5 +33,14 @@ class Take {
   // set notes(note){
   //   this._notes.push(note);
   // }
+
+  markSelect() {
+    if (this.mark === false) {
+      this.mark = true;
+    } else {
+      this.mark = false;
+    }
+  }
+
 
 }
