@@ -16,6 +16,10 @@
   padding:5px;
 }
 
+// Temp Hide
+#select-setup {
+  display: none;
+}
 
 // color variables (for now)
 // via wemakepalettes : No. 59: Limey - https://www.instagram.com/p/CR9IHFdLYLo/
@@ -26,8 +30,11 @@ $mid:#beca1e;
 $midDark: #80a001;
 $dark:#697d06;
 
+// ---
+
 $warningColor: #8d350c;
 
+$pad: .5rem;
 
 body {
   background-color: $light;
@@ -37,7 +44,7 @@ body {
 
 button {
   background-color: $mid;
-  padding: .5rem;
+  padding: $pad;
   margin: 1rem;
   border:none;
   transition: .3s;
@@ -60,6 +67,18 @@ button {
   }
 }
 
-tr:nth-child(even) {
-  background-color: $midLight;
+tr {
+  padding: $pad;
+
+  &:nth-child(even) {
+    background-color: $midLight;
+  }
+
+  &.marked {
+    background-color: yellow!important;
+  }
+}
+
+td{
+  padding: $pad;
 }

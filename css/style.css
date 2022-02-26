@@ -7,9 +7,11 @@
 
 .pagination li { display: inline-block; padding: 5px; }
 
+#select-setup { display: none; }
+
 body { background-color: #f6f4f5; color: #697d06; margin: 1rem; }
 
-button { background-color: #beca1e; padding: .5rem; margin: 1rem; border: none; transition: .3s; }
+button { background-color: #beca1e; padding: 0.5rem; margin: 1rem; border: none; transition: .3s; }
 
 button:hover { background-color: #d2d588; }
 
@@ -17,4 +19,10 @@ button:hover { background-color: #d2d588; }
 
 #remove-button:hover { background-color: #8d350c; color: #f6f4f5; }
 
+tr { padding: 0.5rem; }
+
 tr:nth-child(even) { background-color: #d2d588; }
+
+tr.marked { background-color: yellow !important; }
+
+td { padding: 0.5rem; }
