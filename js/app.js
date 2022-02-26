@@ -4,7 +4,7 @@ let log; // we're either starting a new one, or loading one.
 let newButton = document.querySelector('#new-button');
 newButton.addEventListener('click', (e)=> {
   e.preventDefault();
-  log = new Log(prompt('Project Name'),prompt('Direcor Name'),prompt('DoP'));
+  log = new Log(prompt('Project Name'),prompt('Director Name'),prompt('DoP'));
   console.log(`Project Log created`);
   log.store();
   generateDropdown(); //re-generate dropdown options.

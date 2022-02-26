@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shot Log</title>
+    <title>Nabu | Shot Log</title>
 
     <!-- normalize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -12,28 +12,31 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/8d68fb8e4a.js" crossorigin="anonymous"></script>
   </head>
   <body>
 
 
     <header>
-      <h1>Shot Log</h1>
-      <span>v2.0</span>
+      <h1>Nabu</h1>
+      <span>Simple Shot Log.</span>
+    </header>
 
 
-      <button type="button" name="new-button" id="new-button">New Log</button>
+    <nav>
+      <i class="fa-solid fa-bars"></i>
+    </nav>
+
+    <section>
+      <button type="button" name="new-button" id="new-button"><i class="fa-solid fa-plus"></i> New Log</button>
+      <i class="fa-solid fa-folder-open"></i>
       <select class="" name="select-log" id="select-log">
         <option value="">Choose Log to Load</option>
       </select>
-
-
-      <!-- <button type="button" name="print-button" id="print-button">Show Log</button> -->
-      <!-- <button type="button" name="save-button" id="save-button">Save Log</button> -->
-
-    </header>
+    </section>
 
     <section>
-      <h2>Camera Settings</h2>
+      <h2><i class="fa-solid fa-video"></i></i> Camera Settings</h2>
 
       <form class="" id="cameraSetup">
 
@@ -57,7 +60,7 @@
     </section>
 
     <section>
-      <h2>Take Info</h2>
+      <h2><i class="fa-solid fa-clapperboard"></i> Take Info</h2>
 
       <form class="" id="takeInfo">
 
@@ -80,7 +83,7 @@
 
     <section id="tLog">
 
-      <h2 id="proj">Project</h2>
+      <h2 id="proj"><i class="fa-solid fa-clipboard-list"></i> Project</h2>
       <h3>Director: <span id="dir"></span></h3>
       <h3>Camera: <span id="dop"></span></h3>
 
@@ -118,7 +121,7 @@
       <button type="button" name="remove-button" id="remove-button">Remove Log</button>
     </section>
     <footer>
-      by Thomas Cardwell.
+    <i class="fa-solid fa-code"></i> by Thomas Cardwell, with help from Olivia & Yorick. <br>If you find this useful, you can buy them a treat. <i class="fa-solid fa-paw"></i>
     </footer>
 
 

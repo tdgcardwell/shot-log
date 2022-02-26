@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
 /* list.js placeholder styles */
 .sort.asc, .sort.desc {
   background-color: yellow;
@@ -39,18 +41,21 @@ $pad: .5rem;
 body {
   background-color: $light;
   color: $dark;
-  margin: 1rem;
+  // margin: 1rem;
+  font-family: 'Manrope', sans-serif;
 }
 
 button {
-  background-color: $mid;
+  background-color: $dark;
+  color: $light;
   padding: $pad;
   margin: 1rem;
   border:none;
   transition: .3s;
 
   &:hover {
-    background-color: $midLight;
+    background-color: $mid;
+    color: $dark;
   }
 
 }
@@ -81,4 +86,35 @@ tr {
 
 td{
   padding: $pad;
+}
+
+h1 {
+  text-transform:uppercase;
+}
+
+header,
+nav,
+nav ul,
+section {
+  margin: 1rem;
+}
+
+
+nav ul {
+  padding: .5rem;
+}
+
+nav li {
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+footer {
+  margin: 1rem;
+  text-align: center;
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 /* list.js placeholder styles */
 .sort.asc, .sort.desc { background-color: yellow; }
 
@@ -9,11 +10,11 @@
 
 #select-setup { display: none; }
 
-body { background-color: #f6f4f5; color: #697d06; margin: 1rem; }
+body { background-color: #f6f4f5; color: #697d06; font-family: 'Manrope', sans-serif; }
 
-button { background-color: #beca1e; padding: 0.5rem; margin: 1rem; border: none; transition: .3s; }
+button { background-color: #697d06; color: #f6f4f5; padding: 0.5rem; margin: 1rem; border: none; transition: .3s; }
 
-button:hover { background-color: #d2d588; }
+button:hover { background-color: #beca1e; color: #697d06; }
 
 #remove-button { background-color: #f6f4f5; color: #697d06; border: 1px solid currentColor; }
 
@@ -26,3 +27,15 @@ tr:nth-child(even) { background-color: #d2d588; }
 tr.marked { background-color: yellow !important; }
 
 td { padding: 0.5rem; }
+
+h1 { text-transform: uppercase; }
+
+header, nav, nav ul, section { margin: 1rem; }
+
+nav ul { padding: .5rem; }
+
+nav li { display: inline-block; flex-grow: 1; text-align: center; }
+
+table { width: 100%; }
+
+footer { margin: 1rem; text-align: center; }
