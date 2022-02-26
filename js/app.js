@@ -165,3 +165,34 @@ scene.addEventListener('input' , (e) => {
   shot.value = '';
   take.value = 1;
 })
+
+
+// =============================
+// remove a log
+function remove(saved){
+
+  let stored = localStorage.getItem(saved);
+  if (stored) {
+
+    if (confirm(`Are you sure you wanna do that? ${saved} will be gone forever.`)) {
+
+      localStorage.removeItem(saved);
+      console.log('removed');
+
+    } else {
+      console.log('aborted');
+    }
+
+  } else {
+    console.log('no log found with that name');
+  }
+}
+
+let removeButton = document.querySelector('#remove-button');
+removeButton.addEventListener('click', (e)=> {
+  e.preventDefault();
+  let logToRemove = selectDropdown.value;
+  remove(logToRemove);
+  generateDropdown(); //re-generate dropdown options.
+
+});
