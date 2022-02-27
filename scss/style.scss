@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
-/* list.js placeholder styles */
+// color variables (for now)
+// via wemakepalettes : No. 59: Limey - https://www.instagram.com/p/CR9IHFdLYLo/
+
+$light : #f6f4f5;
+$midLight: #d2d588;
+$mid:#beca1e;
+$midDark: #80a001;
+$dark:#697d06;
+
+// ---
+
+$warningColor: #8d350c;
+
+$pad: .5rem;
+
+/* started with list.js placeholder styles */
 .sort.asc, .sort.desc {
-  background-color: yellow;
+  background-color: $mid;
 }
 .sort.asc::after {
   content: "\002B06";
@@ -22,21 +37,6 @@
 #select-setup {
   display: none;
 }
-
-// color variables (for now)
-// via wemakepalettes : No. 59: Limey - https://www.instagram.com/p/CR9IHFdLYLo/
-
-$light : #f6f4f5;
-$midLight: #d2d588;
-$mid:#beca1e;
-$midDark: #80a001;
-$dark:#697d06;
-
-// ---
-
-$warningColor: #8d350c;
-
-$pad: .5rem;
 
 body {
   background-color: $light;
@@ -80,38 +80,117 @@ tr {
   }
 
   &.marked {
-    background-color: yellow!important;
+    background-color: $mid!important;
   }
 }
 
-td{
+td,
+select {
   padding: $pad;
 }
 
 h1 {
   text-transform:uppercase;
+  margin: 0;
+}
+
+.hamburger {
+  font-size: 2em;
 }
 
 header,
-nav,
-nav ul,
 section {
   margin: 1rem;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav{
+  background-color: $mid;
+  position: sticky;
+  top: 0;
+}
 
 nav ul {
-  padding: .5rem;
+  width: 100%;
+  display: flex;
+  padding: 0;
 }
 
 nav li {
   display: inline-block;
+  padding: .5rem;
   flex-grow: 1;
   text-align: center;
+  color: $midDark;
+
+  // &:first-child{
+  //   border-right: 2px solid $dark;
+  // }
+
+}
+
+nav .active {
+  border: 2px solid $dark;
+  font-weight: 600;
+  color: $dark;
+}
+
+.project-header h2,
+.project-header h3{
+  margin: 0;
+}
+
+.inactive{
+  display:none;
+}
+
+label {
+  display: block;
+  margin-bottom: .2rem;
+}
+
+input {
+  margin-bottom: .5rem;
+}
+
+.grid-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+
+  input{
+      width: 75%;
+  }
+}
+
+.flex-row{
+  display: flex;
+}
+
+.full{
+  width: 100%;
+  margin: .5rem 0;
+}
+
+textarea {
+  height: 5rem;
+}
+
+.big-button {
+  padding: 1rem;
+  background-color: $mid;
+  color: $dark;
+  font-weight: 600;
+  font-size: 1.2em;
 }
 
 table {
   width: 100%;
+  font-size: .75rem;
 }
 
 footer {

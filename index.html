@@ -18,74 +18,103 @@
 
 
     <header>
-      <h1>Nabu</h1>
-      <span>Simple Shot Log.</span>
+      <div class="">
+        <h1>Nabu</h1>
+        <span>Simple Shot Log.</span>
+      </div>
+      <div class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
     </header>
-
-
-    <nav>
-      <i class="fa-solid fa-bars"></i>
-    </nav>
 
     <section>
       <button type="button" name="new-button" id="new-button"><i class="fa-solid fa-plus"></i> New Log</button>
-      <i class="fa-solid fa-folder-open"></i>
       <select class="" name="select-log" id="select-log">
         <option value="">Choose Log to Load</option>
       </select>
     </section>
 
-    <section>
-      <h2><i class="fa-solid fa-video"></i></i> Camera Settings</h2>
-
-      <form class="" id="cameraSetup">
-
-        <label for="lens">Lens</label>
-        <input type="text" name="lens" value="" id="lens" placeholder="17">
-
-        <label for="iso">ISO</label>
-        <input type="text" name="iso" value="" id="iso" placeholder="400">
-
-        <label for="fstop">fstop</label>
-        <input type="text" name="fstop" value="" id="fstop" placeholder="5.6">
-
-        <button type="submit" name="button">Set</button>
-
-      </form>
-
-      <select class="" name="select-setup" id="select-setup">
-        <option value="">Previous Setups</option>
-      </select>
-
-    </section>
-
-    <section>
-      <h2><i class="fa-solid fa-clapperboard"></i> Take Info</h2>
-
-      <form class="" id="takeInfo">
-
-        <label for="scene">Scene</label>
-        <input type="text" name="scene" value="" id="scene" placeholder="1">
-
-        <label for="shot">Shot</label>
-        <input type="text" name="shot" value="" id="shot" placeholder="">
-
-        <label for="take">Take</label>
-        <input type="text" name="take" value="1" id="take">
-
-        <label for="note">Note</label>
-        <textarea name="note" value="" id="note" placeholder="Notes Here"></textarea>
-
-        <button type="submit" name="button">Log it!</button>
-
-      </form>
-    </section>
-
-    <section id="tLog">
-
-      <h2 id="proj"><i class="fa-solid fa-clipboard-list"></i> Project</h2>
+    <section class="project-header">
+      <h2 id="proj">Project</h2>
       <h3>Director: <span id="dir"></span></h3>
       <h3>Camera: <span id="dop"></span></h3>
+    </section>
+
+    <nav>
+      <ul>
+        <li><i class="fa-solid fa-clapperboard"></i> Take</li>
+        <li class="active"><i class="fa-solid fa-clipboard-list"></i> Log</li>
+      </ul>
+    </nav>
+
+    <div id="takeForm" class="inactive">
+      <section>
+        <h2>Camera Settings</h2>
+
+        <form class="" id="cameraSetup">
+
+          <div class="grid-row">
+            <div class="">
+              <label for="lens">Lens</label>
+              <input type="text" name="lens" value="" id="lens" placeholder="17">
+            </div>
+
+            <div class="">
+              <label for="iso">ISO</label>
+              <input type="text" name="iso" value="" id="iso" placeholder="400">
+            </div>
+
+            <div class="">
+              <label for="fstop">fstop</label>
+              <input type="text" name="fstop" value="" id="fstop" placeholder="5.6">
+            </div>
+          </div>
+
+          <div class="flex-row">
+            <button type="submit" name="button" class="full">Set</button>
+          </div>
+
+        </form>
+
+        <select class="" name="select-setup" id="select-setup">
+          <option value="">Previous Setups</option>
+        </select>
+
+      </section>
+
+      <section>
+        <h2>Take Info</h2>
+
+        <form class="" id="takeInfo">
+
+          <div class="grid-row">
+            <div class="">
+              <label for="scene">Scene</label>
+              <input type="text" name="scene" value="" id="scene" placeholder="1">
+            </div>
+
+            <div class="">
+              <label for="shot">Shot</label>
+              <input type="text" name="shot" value="" id="shot" placeholder="">
+            </div>
+
+            <div class="">
+              <label for="take">Take</label>
+              <input type="text" name="take" value="1" id="take">
+            </div>
+          </div>
+
+          <label for="note">Note</label>
+          <textarea class="full" name="note" value="" id="note" placeholder="Notes Here"></textarea>
+
+          <button class="full big-button" type="submit" name="button">Log it!</button>
+
+        </form>
+      </section>
+    </div>
+
+    <section id="tLog">
 
       <input class="search" placeholder="Search" />
       <button class="sort" data-sort="tScene">

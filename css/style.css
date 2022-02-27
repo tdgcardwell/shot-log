@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
-/* list.js placeholder styles */
-.sort.asc, .sort.desc { background-color: yellow; }
+/* started with list.js placeholder styles */
+.sort.asc, .sort.desc { background-color: #beca1e; }
 
 .sort.asc::after { content: "\002B06"; padding-left: 3px; }
 
@@ -24,18 +24,46 @@ tr { padding: 0.5rem; }
 
 tr:nth-child(even) { background-color: #d2d588; }
 
-tr.marked { background-color: yellow !important; }
+tr.marked { background-color: #beca1e !important; }
 
-td { padding: 0.5rem; }
+td, select { padding: 0.5rem; }
 
-h1 { text-transform: uppercase; }
+h1 { text-transform: uppercase; margin: 0; }
 
-header, nav, nav ul, section { margin: 1rem; }
+.hamburger { font-size: 2em; }
 
-nav ul { padding: .5rem; }
+header, section { margin: 1rem; }
 
-nav li { display: inline-block; flex-grow: 1; text-align: center; }
+header { display: flex; justify-content: space-between; align-items: center; }
 
-table { width: 100%; }
+nav { background-color: #beca1e; position: sticky; top: 0; }
+
+nav ul { width: 100%; display: flex; padding: 0; }
+
+nav li { display: inline-block; padding: .5rem; flex-grow: 1; text-align: center; color: #80a001; }
+
+nav .active { border: 2px solid #697d06; font-weight: 600; color: #697d06; }
+
+.project-header h2, .project-header h3 { margin: 0; }
+
+.inactive { display: none; }
+
+label { display: block; margin-bottom: .2rem; }
+
+input { margin-bottom: .5rem; }
+
+.grid-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+
+.grid-row input { width: 75%; }
+
+.flex-row { display: flex; }
+
+.full { width: 100%; margin: .5rem 0; }
+
+textarea { height: 5rem; }
+
+.big-button { padding: 1rem; background-color: #beca1e; color: #697d06; font-weight: 600; font-size: 1.2em; }
+
+table { width: 100%; font-size: .75rem; }
 
 footer { margin: 1rem; text-align: center; }
