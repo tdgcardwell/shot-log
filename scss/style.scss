@@ -11,13 +11,15 @@ $dark:#697d06;
 
 // ---
 
-$warningColor: #8d350c;
+$warningColor: #AF1B3F;
+$copper: #b1740f;
 
 $pad: .5rem;
 
 /* started with list.js placeholder styles */
 .sort.asc, .sort.desc {
   background-color: $mid;
+  color: $dark;
 }
 .sort.asc::after {
   content: "\002B06";
@@ -80,7 +82,8 @@ tr {
   }
 
   &.marked {
-    background-color: $mid!important;
+    background-color: $copper!important;
+    color: $light;
   }
 }
 
@@ -109,7 +112,7 @@ header {
   align-items: center;
 }
 nav{
-  background-color: $mid;
+  background-color: $midLight;
   position: sticky;
   top: 0;
 }
@@ -137,6 +140,7 @@ nav .active {
   border: 2px solid $dark;
   font-weight: 600;
   color: $dark;
+  background-color: $mid;
 }
 
 .project-header h2,

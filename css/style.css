@@ -1,69 +1,180 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 /* started with list.js placeholder styles */
-.sort.asc, .sort.desc { background-color: #beca1e; }
+.sort.asc, .sort.desc {
+  background-color: #beca1e;
+  color: #697d06;
+}
 
-.sort.asc::after { content: "\002B06"; padding-left: 3px; }
+.sort.asc::after {
+  content: "\002B06";
+  padding-left: 3px;
+}
 
-.sort.desc::after { content: "\002B07"; padding-left: 3px; }
+.sort.desc::after {
+  content: "\002B07";
+  padding-left: 3px;
+}
 
-.pagination li { display: inline-block; padding: 5px; }
+.pagination li {
+  display: inline-block;
+  padding: 5px;
+}
 
-#select-setup { display: none; }
+#select-setup {
+  display: none;
+}
 
-body { background-color: #f6f4f5; color: #697d06; font-family: 'Manrope', sans-serif; }
+body {
+  background-color: #f6f4f5;
+  color: #697d06;
+  font-family: 'Manrope', sans-serif;
+}
 
-button { background-color: #697d06; color: #f6f4f5; padding: 0.5rem; margin: 1rem; border: none; transition: .3s; }
+button {
+  background-color: #697d06;
+  color: #f6f4f5;
+  padding: 0.5rem;
+  margin: 1rem;
+  border: none;
+  transition: .3s;
+}
 
-button:hover { background-color: #beca1e; color: #697d06; }
+button:hover {
+  background-color: #beca1e;
+  color: #697d06;
+}
 
-#remove-button { background-color: #f6f4f5; color: #697d06; border: 1px solid currentColor; }
+#remove-button {
+  background-color: #f6f4f5;
+  color: #697d06;
+  border: 1px solid currentColor;
+}
 
-#remove-button:hover { background-color: #8d350c; color: #f6f4f5; }
+#remove-button:hover {
+  background-color: #AF1B3F;
+  color: #f6f4f5;
+}
 
-tr { padding: 0.5rem; }
+tr {
+  padding: 0.5rem;
+}
 
-tr:nth-child(even) { background-color: #d2d588; }
+tr:nth-child(even) {
+  background-color: #d2d588;
+}
 
-tr.marked { background-color: #beca1e !important; }
+tr.marked {
+  background-color: #b1740f !important;
+  color: #f6f4f5;
+}
 
-td, select { padding: 0.5rem; }
+td,
+select {
+  padding: 0.5rem;
+}
 
-h1 { text-transform: uppercase; margin: 0; }
+h1 {
+  text-transform: uppercase;
+  margin: 0;
+}
 
-.hamburger { font-size: 2em; }
+.hamburger {
+  font-size: 2em;
+}
 
-header, section { margin: 1rem; }
+header,
+section {
+  margin: 1rem;
+}
 
-header { display: flex; justify-content: space-between; align-items: center; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-nav { background-color: #beca1e; position: sticky; top: 0; }
+nav {
+  background-color: #d2d588;
+  position: sticky;
+  top: 0;
+}
 
-nav ul { width: 100%; display: flex; padding: 0; }
+nav ul {
+  width: 100%;
+  display: flex;
+  padding: 0;
+}
 
-nav li { display: inline-block; padding: .5rem; flex-grow: 1; text-align: center; color: #80a001; }
+nav li {
+  display: inline-block;
+  padding: .5rem;
+  flex-grow: 1;
+  text-align: center;
+  color: #80a001;
+}
 
-nav .active { border: 2px solid #697d06; font-weight: 600; color: #697d06; }
+nav .active {
+  border: 2px solid #697d06;
+  font-weight: 600;
+  color: #697d06;
+  background-color: #beca1e;
+}
 
-.project-header h2, .project-header h3 { margin: 0; }
+.project-header h2,
+.project-header h3 {
+  margin: 0;
+}
 
-.inactive { display: none; }
+.inactive {
+  display: none;
+}
 
-label { display: block; margin-bottom: .2rem; }
+label {
+  display: block;
+  margin-bottom: .2rem;
+}
 
-input { margin-bottom: .5rem; }
+input {
+  margin-bottom: .5rem;
+}
 
-.grid-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
 
-.grid-row input { width: 75%; }
+.grid-row input {
+  width: 75%;
+}
 
-.flex-row { display: flex; }
+.flex-row {
+  display: flex;
+}
 
-.full { width: 100%; margin: .5rem 0; }
+.full {
+  width: 100%;
+  margin: .5rem 0;
+}
 
-textarea { height: 5rem; }
+textarea {
+  height: 5rem;
+}
 
-.big-button { padding: 1rem; background-color: #beca1e; color: #697d06; font-weight: 600; font-size: 1.2em; }
+.big-button {
+  padding: 1rem;
+  background-color: #beca1e;
+  color: #697d06;
+  font-weight: 600;
+  font-size: 1.2em;
+}
 
-table { width: 100%; font-size: .75rem; }
+table {
+  width: 100%;
+  font-size: .75rem;
+}
 
-footer { margin: 1rem; text-align: center; }
+footer {
+  margin: 1rem;
+  text-align: center;
+}
