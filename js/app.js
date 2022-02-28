@@ -235,3 +235,35 @@ $( "#takeLog").on( "click", "tr .tMark input", function() {
   console.log(thisRow);
 
 });
+
+
+// =============================
+// toggle panes.
+
+let navTake = $('#navTake');
+let navLog = $('#navLog');
+
+let takePane = $('#takeForm');
+let logPane = $('#tLog');
+
+function switchPanes(a){
+  navTake.toggleClass('active');
+  navLog.toggleClass('active');
+
+  if (!a) {
+    takePane.toggle("slide", { direction: "left" } );
+    logPane.toggle("slide", { direction: "right" } );
+  } else {
+    logPane.toggle("slide", { direction: "right" } );
+    takePane.toggle("slide", { direction: "left" } );
+  }
+
+}
+
+navTake.click(function(){
+  switchPanes(true);
+});
+
+navLog.click(function(){
+  switchPanes(false);
+});

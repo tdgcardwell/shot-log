@@ -43,12 +43,12 @@
 
     <nav>
       <ul>
-        <li><i class="fa-solid fa-clapperboard"></i> Take</li>
-        <li class="active"><i class="fa-solid fa-clipboard-list"></i> Log</li>
+        <li id="navTake" class="active"><i class="fa-solid fa-clapperboard"></i> Take</li>
+        <li id="navLog" class=""><i class="fa-solid fa-clipboard-list"></i> Log</li>
       </ul>
     </nav>
 
-    <div id="takeForm" class="inactive">
+    <div id="takeForm" class="">
       <section>
         <h2>Camera Settings</h2>
 
@@ -114,7 +114,7 @@
       </section>
     </div>
 
-    <section id="tLog">
+    <section id="tLog" class="inactive">
 
       <input class="search" placeholder="Search" />
       <button class="sort" data-sort="tScene">
