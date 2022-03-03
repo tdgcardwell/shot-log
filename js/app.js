@@ -311,9 +311,9 @@ importInfo.addEventListener('submit', (e)=> {
   temp.import(impProjName.value,impProjJSON.value);
   console.log(`imported as ${impProjName.value}-log`);
   generateDropdown(); //re-generate dropdown options.
-
-  // console.log(impProjName.value);
-  // console.log(impProjJSON.value);
+  impProjName.value = "";
+  impProjJSON.value = "";
+  hideTray();
 
 
 });
@@ -335,11 +335,13 @@ function exportLog(saved){
   let stored = localStorage.getItem(saved);
   if (stored) {
 
-    console.log(stored);
+    // console.log(stored);
     expProjJSON.value = stored;
 
   }
 }
+
+// Will add copy to clipboard.js at somepoint
 
 
 // fix
