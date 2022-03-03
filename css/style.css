@@ -6,13 +6,19 @@
 }
 
 .sort.asc::after {
-  content: "\002B06";
-  padding-left: 3px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  display: inline-block;
+  content: '\f162';
+  padding-left: .25rem;
 }
 
 .sort.desc::after {
-  content: "\002B07";
-  padding-left: 3px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  display: inline-block;
+  content: '\f887';
+  padding-left: .25rem;
 }
 
 .pagination li {
@@ -162,11 +168,18 @@ input {
 
 .flex-row {
   display: flex;
+  gap: .5rem;
 }
 
 .full {
   width: 100%;
   margin: .5rem 0;
+  flex-grow: 1;
+}
+
+.search {
+  width: 90%;
+  padding: .5rem;
 }
 
 textarea {

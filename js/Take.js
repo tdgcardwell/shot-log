@@ -20,7 +20,7 @@ class Take {
       month = `0${month}`;
     }
     const year = date.getFullYear();
-    this.dateTime = `${hours}:${minutes} - ${year}.${month}.${day}`;
+    this.dateTime = `${year}.${month}.${day} - ${hours}:${minutes}`;
 
     // this._notes = [];
   }
