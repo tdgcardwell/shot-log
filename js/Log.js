@@ -17,6 +17,10 @@ class Log{
     console.log(`saved as ${this.project}-log`);
   }
 
+  import(project,JSON){
+    localStorage.setItem(`${project}-log`, JSON);
+  }
+
   print(){
 
     //update project header details.
