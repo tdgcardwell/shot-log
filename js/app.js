@@ -295,3 +295,24 @@ $(".hamburger").on("click", showTray);
 
 $(".underlay").on("click", hideTray);
 $(".close-out").on("click", hideTray);
+
+
+// ============== Import =======================
+
+let importInfo = document.querySelector('#importInfo');
+
+importInfo.addEventListener('submit', (e)=> {
+  e.preventDefault();
+
+  let impProjName = document.querySelector('#impProjName');
+  let impProjJSON = document.querySelector('#impProjJSON');
+
+  let temp = new Log();
+  temp.import(impProjName.value,impProjJSON.value);
+  console.log(`imported as ${impProjName.value}-log`);
+
+  // console.log(impProjName.value);
+  // console.log(impProjJSON.value);
+
+
+});
