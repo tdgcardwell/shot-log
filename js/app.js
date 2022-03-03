@@ -310,9 +310,41 @@ importInfo.addEventListener('submit', (e)=> {
   let temp = new Log();
   temp.import(impProjName.value,impProjJSON.value);
   console.log(`imported as ${impProjName.value}-log`);
+  generateDropdown(); //re-generate dropdown options.
 
   // console.log(impProjName.value);
   // console.log(impProjJSON.value);
 
 
 });
+
+// ============= Export ================
+
+let exportButton = document.querySelector('#export-button');
+exportButton.addEventListener('click', (e)=> {
+  e.preventDefault();
+  let logToExport = selectDropdown.value;
+  exportLog(logToExport);
+});
+
+
+let expProjJSON = document.querySelector('#expProjJSON');
+
+function exportLog(saved){
+
+  let stored = localStorage.getItem(saved);
+  if (stored) {
+
+    console.log(stored);
+    expProjJSON.value = stored;
+
+  }
+}
+
+
+// fix
+// let removeButton = document.querySelector('#remove-button');
+// removeButton.addEventListener('click', (e)=> {
+//   e.preventDefault();
+//   let logToRemove = selectDropdown.value;
+//   remove(logToRemove);
