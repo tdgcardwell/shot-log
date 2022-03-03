@@ -271,7 +271,7 @@ and also iPads specifically.
   transition: transform .5s;
   transform: translateX(100%);
   background-color: #697d06;
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .menu-tray-on {

@@ -78,12 +78,16 @@ let cameraSetup = document.querySelector('#cameraSetup');
 
 cameraSetup.addEventListener('submit', (e)=> {
   e.preventDefault();
-  let lens = document.querySelector('#lens');
-  let iso = document.querySelector('#iso');
-  let fstop = document.querySelector('#fstop');
-  let cs = new CameraSetup(lens.value,iso.value,fstop.value);
-  console.log(cs);
-  currentSetup = cs;
+  if (log){
+    let lens = document.querySelector('#lens');
+    let iso = document.querySelector('#iso');
+    let fstop = document.querySelector('#fstop');
+    let cs = new CameraSetup(lens.value,iso.value,fstop.value);
+    console.log(cs);
+    currentSetup = cs;
+  } else {
+    alert('Load or Create a Log first!')
+  }
 });
 
 // =============================
@@ -128,13 +132,17 @@ let note = document.querySelector('#note');
 
 takeInfo.addEventListener('submit', (e)=> {
   e.preventDefault();
-  logIt(scene.value,shot.value,take.value,note.value);
-  take.value ++;
-  log.print();
-  listify()
-  log.store();
-  generateDropdown(); //re-generate dropdown options.
-  note.value = ''; //clear notes.
+  if (log){
+    logIt(scene.value,shot.value,take.value,note.value);
+    take.value ++;
+    log.print();
+    listify()
+    log.store();
+    generateDropdown(); //re-generate dropdown options.
+    note.value = ''; //clear notes.
+  } else {
+    alert('Load or Create a Log first!')
+  }
 });
 
 // =============================
