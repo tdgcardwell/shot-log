@@ -78,8 +78,14 @@ h1 {
   margin: 0;
 }
 
-.hamburger {
+.hamburger,
+.close-out {
   font-size: 2em;
+}
+
+.close-out {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 header,
@@ -100,17 +106,22 @@ nav {
   z-index: 1;
 }
 
-nav ul {
+nav ul,
+.menu-tray ul {
   width: 100%;
   display: flex;
   padding: 0;
 }
 
-nav li {
+nav li,
+.menu-tray li {
   display: inline-block;
   padding: .5rem;
   flex-grow: 1;
   text-align: center;
+}
+
+nav li {
   color: #80a001;
 }
 
@@ -255,15 +266,35 @@ and also iPads specifically.
   right: 0;
   height: 100%;
   width: 80vw;
-  color: #1B1E21;
+  color: #f6f4f5;
   z-index: 505;
   transition: transform .5s;
   transform: translateX(100%);
   background-color: #697d06;
+  padding: 1rem;
 }
 
 .menu-tray-on {
   transform: translateX(0);
+}
+
+.menu-tray ul {
+  flex-direction: column;
+}
+
+.menu-tray li {
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 1rem;
+  transition: .5s;
+}
+
+.menu-tray li:hover {
+  background-color: #80a001;
+}
+
+.menu-tray li:first-child {
+  border-top: 1px solid #eee;
 }
 
 .underlay {
@@ -287,7 +318,6 @@ and also iPads specifically.
 }
 
 /* to lock the page*/
-.body-lock,
-.html-lock {
+.body-lock {
   overflow: hidden;
 }

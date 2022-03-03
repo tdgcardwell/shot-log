@@ -97,8 +97,14 @@ h1 {
   margin: 0;
 }
 
-.hamburger {
+.hamburger,
+.close-out {
   font-size: 2em;
+}
+
+.close-out {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 header,
@@ -118,23 +124,24 @@ nav{
   z-index: 1;
 }
 
-nav ul {
+nav ul,
+.menu-tray ul {
   width: 100%;
   display: flex;
   padding: 0;
 }
 
-nav li {
+nav li,
+.menu-tray li {
   display: inline-block;
   padding: .5rem;
   flex-grow: 1;
   text-align: center;
+
+}
+
+nav li {
   color: $midDark;
-
-  // &:first-child{
-  //   border-right: 2px solid $dark;
-  // }
-
 }
 
 nav .active {
@@ -274,16 +281,39 @@ only screen and (max-width: 760px),
   right:0;
   height: 100%;
   width:80vw;
-  color:#1B1E21;
+  color:$light;
   z-index:505;
   transition: transform .5s;
   transform: translateX(100%);
   background-color: $dark;
+
+  padding: 1rem;
 }
 
 .menu-tray-on {
   transform: translateX(0);
 }
+
+.menu-tray ul {
+  flex-direction: column;
+}
+
+.menu-tray li {
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 1rem;
+
+  transition: .5s;
+
+  &:hover {
+    background-color: $midDark;
+  }
+
+  &:first-child {
+    border-top: 1px solid #eee;
+  }
+}
+
 
 .underlay {
   position:fixed;
@@ -306,7 +336,6 @@ only screen and (max-width: 760px),
 }
 
 /* to lock the page*/
-.body-lock,
-.html-lock {
+.body-lock {
   overflow: hidden;
 }
