@@ -247,3 +247,47 @@ and also iPads specifically.
     content: "Mark";
   }
 }
+
+.menu-tray {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 80vw;
+  color: #1B1E21;
+  z-index: 505;
+  transition: transform .5s;
+  transform: translateX(100%);
+  background-color: #697d06;
+}
+
+.menu-tray-on {
+  transform: translateX(0);
+}
+
+.underlay {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  background-color: #000;
+  opacity: 0;
+  z-index: 500;
+  visibility: hidden;
+  transition: opacity 1s;
+}
+
+.underlay-on {
+  visibility: visible;
+  opacity: .5;
+  cursor: pointer;
+}
+
+/* to lock the page*/
+.body-lock,
+.html-lock {
+  overflow: hidden;
+}

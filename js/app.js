@@ -267,3 +267,23 @@ navTake.click(function(){
 navLog.click(function(){
   switchPanes(false);
 });
+
+
+// =========== Menu Tray ======================
+
+function showTray() {
+  $(".underlay").addClass("underlay-on");
+  $(".menu-tray").addClass("menu-tray-on");
+  $("body").addClass("body-lock");
+}
+
+function hideTray() {
+  $(".underlay").removeClass("underlay-on");
+  $(".menu-tray").removeClass("menu-tray-on");
+  $("body").removeClass("body-lock");
+}
+
+$(".hamburger").on("click", showTray);
+
+$(".underlay").on("click", hideTray);
+$(".close-out").on("click", hideTray);
