@@ -334,3 +334,7 @@ and also iPads specifically.
 .body-lock {
   overflow: hidden;
 }
+
+.menu-section {
+  display: none;
+}

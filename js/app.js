@@ -344,9 +344,10 @@ function exportLog(saved){
 // Will add copy to clipboard.js at somepoint
 
 
-// fix
-// let removeButton = document.querySelector('#remove-button');
-// removeButton.addEventListener('click', (e)=> {
-//   e.preventDefault();
-//   let logToRemove = selectDropdown.value;
-//   remove(logToRemove);
+// ------ menu sections
+$( ".menu-tray ul").on( "click", "h3", function() {
+
+  let thisRow = $(this).parents("li");
+  thisRow.find( ".menu-section" ).toggle();
+
+});
