@@ -401,4 +401,17 @@ only screen and (max-width: 760px),
     display: block!important;
   }
 
+  tr {
+    padding: $pad;
+
+    &:nth-child(even) {
+      background-color: #eee;
+    }
+
+    &.marked {
+      background-color: #999!important;
+      color: #000;
+    }
+  }
+
 }

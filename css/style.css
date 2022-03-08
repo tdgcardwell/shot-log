@@ -130,4 +130,7 @@ and also iPads specifically.
 
 @media print { body { color: #000 !important; background-color: #fff !important; }
   .underlay, .menu-tray, .hamburger, #newOrLoad, nav, #takeForm, .search, #tLog .flex-row, .pagination, #remove-button { display: none !important; }
-  #tLog { display: block !important; } }
+  #tLog { display: block !important; }
+  tr { padding: 0.5rem; }
+  tr:nth-child(even) { background-color: #eee; }
+  tr.marked { background-color: #999 !important; color: #000; } }
