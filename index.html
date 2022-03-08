@@ -22,7 +22,7 @@
       <ul>
         <li><h3>Why "Nabu"?</h3>
           <div class="menu-section">
-
+            <p>Nabu was the ancient Mesopotamian patron god of literacy, the rational arts, scribes and wisdom - so naturally, his symbols included a stylus resting on a tablet. He was also the inventor of writing, and rode on a winged dragon! </p>
           </div>
         </li>
         <li><h3>Import</h3>
@@ -66,7 +66,7 @@
 
     </header>
 
-    <section>
+    <section id="newOrLoad">
       <button type="button" name="new-button" id="new-button"><i class="fa-solid fa-plus"></i> New Log</button>
       <select class="" name="select-log" id="select-log">
         <option value="">Choose Log to Load</option>
@@ -182,7 +182,13 @@
 
           </tbody>
       </table>
-
+      <select id="perPage" class="" name="">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="25">25</option>
+        <option value="9999">All</option>
+      </select>
+      Logs Per page
       <ul class="pagination"></ul>
 
     </section>

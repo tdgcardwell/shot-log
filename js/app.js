@@ -25,7 +25,7 @@ function recall(saved){
     log.setups = _log.setups;
     console.log(`${saved} loaded`);
     log.print(); //load this one on the page.
-    listify()
+    listify(perPage.value)
     setups = log.setups;
   } else {
     console.log('no log found with that name');
@@ -136,7 +136,7 @@ takeInfo.addEventListener('submit', (e)=> {
     logIt(scene.value,shot.value,take.value,note.value);
     take.value ++;
     log.print();
-    listify()
+    listify(perPage.value)
     log.store();
     generateDropdown(); //re-generate dropdown options.
     note.value = ''; //clear notes.
@@ -210,14 +210,31 @@ removeButton.addEventListener('click', (e)=> {
 
 // ================= list.js
 
-function listify(){
+function listify(x=10,y=true){
   var options = {
     valueNames: [ 'tScene', 'tShot', 'tTake', 'tDate', 'tLens', 'tIso', 'tFstop', 'tNote' ],
-    page: 10,
-    pagination: true
+    page: x,
+    pagination: y
   };
   var takeList = new List('tLog', options);
 }
+
+
+let perPage = document.querySelector('#perPage');
+
+perPage.addEventListener('change', (e)=> {
+  e.preventDefault();
+  let amount = perPage.value;
+
+  log.print();
+  listify(amount);
+
+  perPage.blur(); //this is the key to making 'change' work right away.
+
+});
+
+// ==========
+
 
 // ------ marking
 $( "#takeLog").on( "click", "tr .tMark input", function() {

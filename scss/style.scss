@@ -36,11 +36,6 @@ $pad: .5rem;
   padding-left: .25rem;
 }
 
-.pagination li {
-  display:inline-block;
-  padding:5px;
-}
-
 // Temp Hide
 #select-setup {
   display: none;
@@ -131,7 +126,8 @@ nav{
 }
 
 nav ul,
-.menu-tray ul {
+.menu-tray ul,
+.pagination {
   width: 100%;
   display: flex;
   padding: 0;
@@ -355,4 +351,54 @@ only screen and (max-width: 760px),
 
 .menu-section {
   display: none;
+}
+
+#perPage {
+  margin: 5px 5px 5px 0;
+}
+
+.pagination {
+
+  align-items: center;
+
+  &:before{
+    content: "Page";
+    margin-right: 5px;
+  }
+
+  li {
+    display:inline-block;
+    padding:5px;
+
+    a {
+      text-decoration: none;
+      color: $dark;
+    }
+  }
+
+  .active a {
+    color: $mid;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 1024px) {
+
+}
+
+@media print {
+
+  body{
+    color: #000!important;
+    background-color: #fff!important;
+  }
+
+  .underlay, .menu-tray, .hamburger, #newOrLoad, nav, #takeForm, .search, #tLog .flex-row, .pagination, #remove-button {
+    display: none!important;
+  }
+
+  #tLog {
+    display: block!important;
+  }
+
 }
