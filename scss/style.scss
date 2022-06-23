@@ -14,7 +14,13 @@ $dark:#697d06;
 $warningColor: #AF1B3F;
 $copper: #b1740f;
 
-$pad: .5rem;
+$pad: 1rem;
+
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 /* started with list.js placeholder styles */
 .sort.asc, .sort.desc {
@@ -88,8 +94,11 @@ tr {
   }
 }
 
-td,
 select {
+  padding: $pad/2;
+}
+
+td, th {
   padding: $pad;
 }
 
@@ -193,8 +202,8 @@ input {
 }
 
 .search {
-  width:90%;
   padding: .5rem;
+  flex-grow: 1;
 }
 
 textarea {
@@ -210,13 +219,26 @@ textarea {
 }
 
 table {
-  width: 100%;
+  max-width: 100%;
+  width: max-content;
+  margin: 0 auto;
   // font-size: .75rem;
 }
 
 footer {
   margin: 1rem;
   text-align: center;
+
+  a {
+    color: $dark;
+    transition: .3s;
+
+    &:hover {
+      color: $mid;
+    }
+
+  }
+
 }
 
 

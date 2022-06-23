@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+.wrapper { width: 100%; max-width: 1000px; margin: 0 auto; }
+
 /* started with list.js placeholder styles */
 .sort.asc, .sort.desc { background-color: #beca1e; color: #697d06; }
 
@@ -10,7 +12,7 @@
 
 body { background-color: #f6f4f5; color: #697d06; font-family: 'Manrope', sans-serif; }
 
-button { background-color: #697d06; color: #f6f4f5; padding: 0.5rem; margin: 1rem; border: none; transition: .3s; }
+button { background-color: #697d06; color: #f6f4f5; padding: 1rem; margin: 1rem; border: none; transition: .3s; }
 
 button:hover { background-color: #beca1e; color: #697d06; }
 
@@ -18,13 +20,15 @@ button:hover { background-color: #beca1e; color: #697d06; }
 
 #remove-button:hover { background-color: #AF1B3F; color: #f6f4f5; }
 
-tr { padding: 0.5rem; }
+tr { padding: 1rem; }
 
 tr:nth-child(even) { background-color: #d2d588; }
 
 tr.marked { background-color: #b1740f !important; color: #f6f4f5; }
 
-td, select { padding: 0.5rem; }
+select { padding: 0.5rem; }
+
+td, th { padding: 1rem; }
 
 h1 { text-transform: uppercase; margin: 0; }
 
@@ -62,15 +66,19 @@ input { margin-bottom: .5rem; }
 
 .full { width: 100%; margin: .5rem 0; flex-grow: 1; }
 
-.search { width: 90%; padding: .5rem; }
+.search { padding: .5rem; flex-grow: 1; }
 
 textarea { height: 5rem; }
 
 .big-button { padding: 1rem; background-color: #beca1e; color: #697d06; font-weight: 600; font-size: 1.2em; }
 
-table { width: 100%; }
+table { max-width: 100%; width: max-content; margin: 0 auto; }
 
 footer { margin: 1rem; text-align: center; }
+
+footer a { color: #697d06; transition: .3s; }
+
+footer a:hover { color: #beca1e; }
 
 /*
 Max width before this PARTICULAR table gets nasty
@@ -131,6 +139,6 @@ and also iPads specifically.
 @media print { body { color: #000 !important; background-color: #fff !important; }
   .underlay, .menu-tray, .hamburger, #newOrLoad, nav, #takeForm, .search, #tLog .flex-row, .pagination, #remove-button { display: none !important; }
   #tLog { display: block !important; }
-  tr { padding: 0.5rem; }
+  tr { padding: 1rem; }
   tr:nth-child(even) { background-color: #eee; }
   tr.marked { background-color: #999 !important; color: #000; } }

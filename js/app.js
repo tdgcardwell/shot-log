@@ -364,7 +364,8 @@ function exportLog(saved){
 // ------ menu sections
 $( ".menu-tray ul").on( "click", "h3", function() {
 
+  $( ".menu-tray li .menu-section").hide();
   let thisRow = $(this).parents("li");
-  thisRow.find( ".menu-section" ).toggle();
+  thisRow.find( ".menu-section" ).show();
 
 });
