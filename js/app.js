@@ -437,7 +437,7 @@ function saveTheEdit(){
   log.takes[globalTakeNumber][specificField] = newInfo; //save the info to correct part of the take/log
 
 
-  // console.log(thisTake);
+  console.log(log.takes);
 
 
   that.text(newInfo); // update the field on the display.
