@@ -49,7 +49,7 @@ class Log{
         isItChecked = "";
         markedClass = "";
       }
-      logTable.innerHTML+= `<tr ${markedClass}>
+      logTable.innerHTML+= `<tr ${markedClass} data-take="${i}">
                             <td class="tScene">${this.takes[i].scene}</td>
                             <td class="tShot">${this.takes[i].shot}</td>
                             <td class="tTake">${this.takes[i].take}</td>

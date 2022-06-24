@@ -12,7 +12,7 @@ $dark:#697d06;
 // ---
 
 $warningColor: #AF1B3F;
-$copper: #b1740f;
+$highlight: #b1740f;
 
 $pad: 1rem;
 
@@ -89,7 +89,7 @@ tr {
   }
 
   &.marked {
-    background-color: $copper!important;
+    background-color: $highlight!important;
     color: $light;
   }
 }
@@ -100,6 +100,11 @@ select {
 
 td, th {
   padding: $pad;
+}
+
+td {
+  cursor: pointer;
+  text-align: center;
 }
 
 h1 {
@@ -221,7 +226,7 @@ textarea {
 table {
   max-width: 100%;
   width: max-content;
-  margin: 0 auto;
+  margin: 0 auto $pad *2;;
   // font-size: .75rem;
 }
 

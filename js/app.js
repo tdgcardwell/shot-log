@@ -133,7 +133,7 @@ let note = document.querySelector('#note');
 takeInfo.addEventListener('submit', (e)=> {
   e.preventDefault();
   if (log){
-    logIt(scene.value,shot.value,take.value,note.value);
+    logIt(scene.value,shot.value.toUpperCase(),take.value,note.value);
     take.value ++;
     log.print();
     listify(perPage.value)
@@ -369,3 +369,79 @@ $( ".menu-tray ul").on( "click", "h3", function() {
   thisRow.find( ".menu-section" ).show();
 
 });
+
+
+// ================ attempting edit....
+
+$( "#takeLog").on( "click", "td", makeItEditable);
+$( "#takeLog" ).on( "click", "#editSave", saveTheEdit );
+
+let globalTakeNumber = "";
+let globalField = "";
+let that = "";
+
+function makeItEditable(e){
+  if ( $(this).hasClass("tMark") ) {
+    console.log("nope");
+  } else {
+    let current = $(this).text();
+    globalField = $(this).attr("class");
+    that = $(this);
+
+    let whichTake = $(this).parent("tr");
+    globalTakeNumber = $(whichTake).attr("data-take");
+
+    $(this).html(`
+      <input type="text" id="editField" value="${current}">
+      <button type="button" id="editSave">Save</button>
+
+      `);
+    $( "#takeLog").off( "click", "td", makeItEditable); //turn off the event listener.
+    $("#takeLog #editField").focus();
+  }
+}
+
+function saveTheEdit(){
+  $( "#takeLog").on( "click", "td", makeItEditable); //turn the event listener back on.
+  let newInfo = $("#takeLog #editField").val();
+
+  let thisTake = log.takes[globalTakeNumber];
+
+  // console.log(thisTake);
+  // console.log(globalField);
+  // console.log(newInfo);
+
+  // figure out what actual field is called
+  let specificField = "";
+
+  if (globalField == "tScene"){
+    specificField = "scene";
+  } else if (globalField == "tShot") {
+    specificField = "shot";
+  } else if (globalField == "tTake") {
+    specificField = "take";
+  } else if (globalField == "tDate") {
+    specificField = "dateTime";
+  } else if (globalField == "tLens") {
+    specificField = "camera.lens";
+  } else if (globalField == "tIso") {
+    specificField = "camera.iso";
+  } else if (globalField == "tFstop") {
+    specificField = "camera.fstop";
+  } else if (globalField == "tNote") {
+    specificField = "note";
+  }
+
+  // console.log(specificField);
+
+  log.takes[globalTakeNumber][specificField] = newInfo; //save the info to correct part of the take/log
+
+
+  // console.log(thisTake);
+
+
+  that.text(newInfo); // update the field on the display.
+  log.store();
+
+
+}

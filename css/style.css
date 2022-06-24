@@ -30,6 +30,8 @@ select { padding: 0.5rem; }
 
 td, th { padding: 1rem; }
 
+td { cursor: pointer; text-align: center; }
+
 h1 { text-transform: uppercase; margin: 0; }
 
 .hamburger, .close-out { font-size: 2em; }
@@ -72,7 +74,7 @@ textarea { height: 5rem; }
 
 .big-button { padding: 1rem; background-color: #beca1e; color: #697d06; font-weight: 600; font-size: 1.2em; }
 
-table { max-width: 100%; width: max-content; margin: 0 auto; }
+table { max-width: 100%; width: max-content; margin: 0 auto 2rem; }
 
 footer { margin: 1rem; text-align: center; }
 
