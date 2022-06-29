@@ -41,7 +41,8 @@ function generateDropdown() {
 
   for (const key in localStorage) {
 
-    if (localStorage.hasOwnProperty(key)) {
+    // make sure darkMode isn't there as a log to load!!
+    if (localStorage.hasOwnProperty(key) && key != "darkMode" ) {
 
         // console.log(`${key}: ${localStorage[key]}`);
         options += `<option value="${key}">${key}</option>`;
@@ -445,3 +446,43 @@ function saveTheEdit(){
 
 
 }
+
+
+/*
+======================================================
+settings
+======================================================
+- remember: a string is not a boolean!
+
+*/
+
+// gotta declare it outside of a function
+let darkMode = $("#darkMode");
+
+function enableDarkMode(){
+  if ( darkMode.prop("checked", false) ) {
+    darkMode.prop("checked", true);
+  }
+  $("body").addClass("dark-mode");
+  console.log("Dark Mode");
+}
+
+// if there are stored settings...
+if (localStorage.darkMode=="on") {
+  enableDarkMode();
+  console.log("from stored");
+}
+
+
+darkMode.change(function() {
+  if ($(this).is(":checked")) {
+    enableDarkMode();
+    console.log("set from toggle");
+    localStorage.setItem('darkMode', "on");
+  } else {
+    $("body").removeClass("dark-mode");
+    localStorage.setItem('darkMode', "off");
+  }
+
+
+});

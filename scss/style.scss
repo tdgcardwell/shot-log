@@ -3,16 +3,42 @@
 // color variables (for now)
 // via wemakepalettes : No. 59: Limey - https://www.instagram.com/p/CR9IHFdLYLo/
 
-$light : #f6f4f5;
-$midLight: #d2d588;
-$mid:#beca1e;
-$midDark: #80a001;
-$dark:#697d06;
+:root {
+  --light: #f6f4f5;
+  --midlight: #d2d588;
+  --mid: #beca1e;
+  --middark: #80a001;
+  --dark:#697d06;
+  --warningColor: #AF1B3F;
+  --highlight: #b1740f;
+}
 
-// ---
+.dark-mode {
+  --light: #00111a;
+  --midlight: #003047;
+  --mid: #002233;
 
-$warningColor: #AF1B3F;
-$highlight: #b1740f;
+  --middark: #fff;
+
+
+  --dark:#1f7ead;
+
+  --warningColor: #AF1B3F;
+  --highlight: #683f6d;
+}
+
+
+
+
+// Breakpoints
+
+@mixin tablet-and-wider {
+  @media (min-width: 768px) { @content; }
+}
+@mixin desktop-and-wider {
+  @media (min-width: 1024px) { @content; }
+}
+
 
 $pad: 1rem;
 
@@ -24,8 +50,8 @@ $pad: 1rem;
 
 /* started with list.js placeholder styles */
 .sort.asc, .sort.desc {
-  background-color: $mid;
-  color: $dark;
+  background-color: var(--mid);
+  color: var(--dark);
 }
 .sort.asc::after {
   font-family: "Font Awesome 6 Free";
@@ -47,36 +73,41 @@ $pad: 1rem;
   display: none;
 }
 
-body {
-  background-color: $light;
-  color: $dark;
+body, input, textarea {
+  background-color: var(--light);
+  color: var(--dark);
   // margin: 1rem;
   font-family: 'Manrope', sans-serif;
 }
 
-button {
-  background-color: $dark;
-  color: $light;
+input, textarea {
   padding: $pad;
-  margin: 1rem;
+}
+
+select, button {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: $pad;
+  margin-right: 1rem;
   border:none;
   transition: .3s;
 
   &:hover {
-    background-color: $mid;
-    color: $dark;
+    background-color: var(--mid);
+    color: var(--dark);
   }
 
 }
 
+
 #remove-button {
-  background-color: $light;
-  color: $dark;
+  background-color: var(--light);
+  color: var(--dark);
   border: 1px solid currentColor;
 
   &:hover {
-    background-color: $warningColor;
-    color: $light;
+    background-color: var(--warningColor);
+    color: var(--light);
     // border: 1px solid currentColor;
   }
 }
@@ -85,17 +116,13 @@ tr {
   padding: $pad;
 
   &:nth-child(even) {
-    background-color: $midLight;
+    background-color: var(--midlight);
   }
 
   &.marked {
-    background-color: $highlight!important;
-    color: $light;
+    background-color: var(--highlight)!important;
+    color: var(--light);
   }
-}
-
-select {
-  padding: $pad/2;
 }
 
 td, th {
@@ -133,7 +160,7 @@ header {
   align-items: center;
 }
 nav{
-  background-color: $midLight;
+  background-color: var(--midlight);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -157,14 +184,14 @@ nav li,
 }
 
 nav li {
-  color: $midDark;
+  color: var(--mid)Dark;
 }
 
 nav .active {
-  border: 2px solid $dark;
+  border: 2px solid var(--dark);
   font-weight: 600;
-  color: $dark;
-  background-color: $mid;
+  color: var(--dark);
+  background-color: var(--mid);
 }
 
 .project-header h2,
@@ -217,8 +244,8 @@ textarea {
 
 .big-button {
   padding: 1rem;
-  background-color: $mid;
-  color: $dark;
+  background-color: var(--mid);
+  color: var(--dark);
   font-weight: 600;
   font-size: 1.2em;
 }
@@ -235,11 +262,11 @@ footer {
   text-align: center;
 
   a {
-    color: $dark;
+    color: var(--dark);
     transition: .3s;
 
     &:hover {
-      color: $mid;
+      color: var(--mid);
     }
 
   }
@@ -317,11 +344,11 @@ only screen and (max-width: 760px),
   right:0;
   height: 100%;
   width:80vw;
-  color:$light;
+  color:var(--light);
   z-index:505;
   transition: transform .5s;
   transform: translateX(100%);
-  background-color: $dark;
+  background-color: var(--dark);
 
   padding: 1.25rem;
 }
@@ -342,7 +369,7 @@ only screen and (max-width: 760px),
   transition: .5s;
 
   &:hover {
-    background-color: $midDark;
+    background-color: var(--mid)Dark;
   }
 
   &:first-child {
@@ -399,12 +426,12 @@ only screen and (max-width: 760px),
 
     a {
       text-decoration: none;
-      color: $dark;
+      color: var(--dark);
     }
   }
 
   .active a {
-    color: $mid;
+    color: var(--mid);
     text-decoration: none;
   }
 }
@@ -441,4 +468,121 @@ only screen and (max-width: 760px),
     }
   }
 
+}
+
+.switches {
+  @include tablet-and-wider {
+    width: 50%;
+  }
+
+  @include desktop-and-wider {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+
+    .switch {
+      margin-bottom: auto;
+    }
+
+  }
+}
+
+.leave-room-for-jesus {
+    // this class name is purely to entertain myself, and remind me what it does.
+    // the other option was to call it ".dont-stand-so-close-to-me"...
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1rem 0;
+}
+
+.leave-room-for-jesus *:first-child {
+  margin-right: auto;
+}
+
+// Inspired by www.w3schools.com/howto/howto_css_switch.asp and then I changed the styling to match the mock-up.
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--mid) ;
+  border: 2px solid var(--light);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+// to confirm: I understand that this is the part that is the 'toggle' that slides across.
+.slider::after {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 0;
+  bottom: 0;
+
+  background-color: #fff;
+  border: 2px solid var(--dark);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+// and here's where I added the writing.
+.slider::before {
+  content: "OFF";
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: var(--dark);
+  transition: .7s;
+}
+
+// color changing
+input:checked + .slider {
+  background-color: var(--light);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--light);
+}
+
+// I understand that this is the part making the movement happen when the box is checked.
+input:checked + .slider::after {
+  -webkit-transform: translateX(56px);
+  -ms-transform: translateX(56px);
+  transform: translateX(56px);
+}
+
+// similarly - this changes the writing
+input:checked + .slider::before {
+  content: "ON";
+  position: absolute;
+  top: 5px;
+  left: -20px;
+  color: var(--dark);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::after {
+  border-radius: 50%;
 }
