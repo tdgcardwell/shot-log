@@ -194,6 +194,11 @@ nav .active {
   background-color: var(--mid);
 }
 
+.project-header,
+#create-button {
+  display:none;
+}
+
 .project-header h2,
 .project-header h3{
   margin: 0;
@@ -324,15 +329,16 @@ only screen and (max-width: 760px),
 	/*
 	Label the data
 	*/
-	td:nth-of-type(1):before { content: "Scene"; }
-	td:nth-of-type(2):before { content: "Shot"; }
-	td:nth-of-type(3):before { content: "Take"; }
-	td:nth-of-type(4):before { content: "Time & Date"; }
-	td:nth-of-type(5):before { content: "Lens (mm)"; }
-	td:nth-of-type(6):before { content: "ISO"; }
-	td:nth-of-type(7):before { content: "fstop"; }
-	td:nth-of-type(8):before { content: "Note"; }
-	td:nth-of-type(9):before { content: "Mark"; }
+  td:nth-of-type(1):before { content: "Filename"; }
+  td:nth-of-type(2):before { content: "Scene"; }
+	td:nth-of-type(3):before { content: "Shot"; }
+	td:nth-of-type(4):before { content: "Take"; }
+	td:nth-of-type(5):before { content: "Time & Date"; }
+	td:nth-of-type(6):before { content: "Lens (mm)"; }
+	td:nth-of-type(7):before { content: "ISO"; }
+	td:nth-of-type(8):before { content: "fstop"; }
+	td:nth-of-type(9):before { content: "Note"; }
+	td:nth-of-type(10):before { content: "Mark"; }
 }
 
 // ---------------------

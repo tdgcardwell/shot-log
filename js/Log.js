@@ -41,6 +41,7 @@ class Log{
 
       let isItChecked;
       let markedClass;
+      let filename;
       let isItMarked = this.takes[i].mark;
       if (isItMarked){
         isItChecked = "checked";
@@ -49,7 +50,15 @@ class Log{
         isItChecked = "";
         markedClass = "";
       }
+
+      if (this.takes[i].filename){
+        filename = this.takes[i].filename;
+      } else {
+        filename = "";
+      }
+
       logTable.innerHTML+= `<tr ${markedClass} data-take="${i}">
+                            <td class="tFilename">${filename}</td>
                             <td class="tScene">${this.takes[i].scene}</td>
                             <td class="tShot">${this.takes[i].shot}</td>
                             <td class="tTake">${this.takes[i].take}</td>

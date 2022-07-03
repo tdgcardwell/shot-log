@@ -43,7 +43,14 @@
         <li><h3><i class="fa-solid fa-file-export"></i> Export</h3>
           <div class="menu-section">
             <button class="full big-button" type="submit" name="button" id="export-button">Export</button>
-            <textarea class="full" name="expProjJSON" id="expProjJSON"></textarea>
+            <textarea class="full" name="expProjJSON" id="expProjJSON" placeholder="Export JSON "></textarea>
+
+            <select class="" name="export-select" id="export-select">
+              <option value="">Choose Log</option>
+            </select>
+
+            <button type="button" name="button" id="downloadBtn">Download Metadata as .csv file</button>
+
           </div>
 
         </li>
@@ -98,15 +105,24 @@
     <div class="wrapper">
       <section id="newOrLoad">
         <button type="button" name="new-button" id="new-button"><i class="fa-solid fa-plus"></i> New Log</button>
+
+        <button type="button" name="create-button" id="create-button">Create New Log</button>
+
         <select class="" name="select-log" id="select-log">
           <option value="">Choose Log to Load</option>
         </select>
       </section>
 
+      <section class="temp-project-header">
+        <input type="text" name="" id="projectNameField" value="" placeholder="Project Name">
+        <input type="text" name="" id="projectDirField" value="" placeholder="Director">
+        <input type="text" name="" id="projectCamField" value="" placeholder="DoP">
+      </section>
+
       <section class="project-header">
         <h2 id="proj">Project</h2>
         <h3>Director: <span id="dir"></span></h3>
-        <h3>Camera: <span id="dop"></span></h3>
+        <h3>DoP: <span id="dop"></span></h3>
       </section>
 
       <nav>
@@ -204,6 +220,7 @@
       <table>
         <thead>
           <tr>
+            <th>Filename</th>
             <th>Scene</th>
             <th>Shot</th>
             <th>Take</th>
@@ -255,5 +272,8 @@
   <script src="js/Take.js" charset="utf-8"></script>
   <script src="js/Log.js" charset="utf-8"></script>
   <script src="js/app.js" charset="utf-8"></script>
+
+  <script src="js/FileSaver.min.js" charset="utf-8"></script>
+  <script src="js/csv.js" charset="utf-8"></script>
 
 </html>

@@ -4,16 +4,40 @@ let log; // we're either starting a new one, or loading one.
 let newButton = document.querySelector('#new-button');
 newButton.addEventListener('click', (e)=> {
   e.preventDefault();
-  log = new Log(prompt('Project Name'),prompt('Director Name'),prompt('DoP'));
-  console.log(`Project Log created`);
-  log.store();
-  generateDropdown(); //re-generate dropdown options.
-  log.print(); //load this one on the page.
+
+  if ($("#projectNameField").val() != ""){
+    log = new Log( $("#projectNameField").val() ,$("#projectDirField").val() ,$("#projectCamField").val() );
+
+    console.log(`Project Log created`);
+    log.store();
+    generateDropdown(); //re-generate dropdown options.
+    log.print(); //load this one on the page.
+
+    $(".temp-project-header").hide();
+    $(".project-header").show();
+
+    $("#new-button").hide();
+    $("#create-button").show();
+
+
+  } else {
+    $("#projectNameField").focus()
+  }
+
+
+
+
 });
 
 
 // to recall saved log
 function recall(saved){
+
+  $(".temp-project-header").hide();
+  $(".project-header").show();
+
+  $("#new-button").hide();
+  $("#create-button").show();
 
   let stored = localStorage.getItem(saved);
   if (stored) {
@@ -27,10 +51,31 @@ function recall(saved){
     log.print(); //load this one on the page.
     listify(perPage.value)
     setups = log.setups;
+
   } else {
     console.log('no log found with that name');
   }
 }
+
+
+// to show fields to create new again
+
+let createButton = document.querySelector('#create-button');
+createButton.addEventListener('click', (e)=> {
+
+  $("#projectNameField").val("");
+  $("#projectDirField").val("");
+  $("#projectCamField").val("");
+
+  $(".temp-project-header").show();
+  $(".project-header").hide();
+
+  $("#new-button").show();
+  $("#create-button").hide();
+
+});
+
+
 // =============================================
 
 let selectDropdown = document.querySelector('#select-log')
@@ -431,6 +476,8 @@ function saveTheEdit(){
     specificField = "camera.fstop";
   } else if (globalField == "tNote") {
     specificField = "note";
+  } else if (globalField == "tFilename") {
+    specificField = "filename";
   }
 
   // console.log(specificField);

@@ -56,6 +56,8 @@ nav li { color: var(--mid) Dark; }
 
 nav .active { border: 2px solid var(--dark); font-weight: 600; color: var(--dark); background-color: var(--mid); }
 
+.project-header, #create-button { display: none; }
+
 .project-header h2, .project-header h3 { margin: 0; }
 
 .inactive { display: none; }
@@ -99,15 +101,16 @@ and also iPads specifically.
   td { /* Behave  like a "row" */ border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 50%; min-height: 1.5rem; }
   td:before { /* Now like a table header */ position: absolute; /* Top/left values mimic padding */ top: 6px; left: 6px; width: 45%; padding-right: 10px; white-space: nowrap; }
   /* Label the data */
-  td:nth-of-type(1):before { content: "Scene"; }
-  td:nth-of-type(2):before { content: "Shot"; }
-  td:nth-of-type(3):before { content: "Take"; }
-  td:nth-of-type(4):before { content: "Time & Date"; }
-  td:nth-of-type(5):before { content: "Lens (mm)"; }
-  td:nth-of-type(6):before { content: "ISO"; }
-  td:nth-of-type(7):before { content: "fstop"; }
-  td:nth-of-type(8):before { content: "Note"; }
-  td:nth-of-type(9):before { content: "Mark"; } }
+  td:nth-of-type(1):before { content: "Filename"; }
+  td:nth-of-type(2):before { content: "Scene"; }
+  td:nth-of-type(3):before { content: "Shot"; }
+  td:nth-of-type(4):before { content: "Take"; }
+  td:nth-of-type(5):before { content: "Time & Date"; }
+  td:nth-of-type(6):before { content: "Lens (mm)"; }
+  td:nth-of-type(7):before { content: "ISO"; }
+  td:nth-of-type(8):before { content: "fstop"; }
+  td:nth-of-type(9):before { content: "Note"; }
+  td:nth-of-type(10):before { content: "Mark"; } }
 
 .menu-tray { position: fixed; overflow: auto; top: 0; right: 0; height: 100%; width: 80vw; color: var(--light); z-index: 505; transition: transform .5s; transform: translateX(100%); background-color: var(--dark); padding: 1.25rem; }
 
